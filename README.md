@@ -1,21 +1,25 @@
-# Valoriser son expérience et présenter son projet professionnel — V3 pédagogique
+# Valoriser son expérience et présenter son projet professionnel — V5
 
-Version autonome pour GitHub Pages.
+Version GitHub Pages autonome du module IFAP.
 
-## Évolutions V3
+## Évolutions V5
 
-- accueil recentré sur la promesse, les objectifs, la démarche et la durée ;
-- navigation latérale libre sans incitation à explorer depuis l’accueil ;
-- nouvelle direction visuelle plus chaleureuse : vert IFAP, bleu lagon, jaune, corail et sable ;
-- analyse complète des 3 expériences prioritaires avec guidage décroissant ;
-- autocontrôle des preuves et du projet ;
-- micro-entraînements oraux de 30 à 60 secondes pendant le parcours ;
-- rappels personnalisés issus du diagnostic initial ;
-- conseils adaptés au support d’entretien déclaré ;
-- deux simulations successives avec 2 priorités de progrès ;
-- bilan avant / maintenant sur les 5 dimensions du diagnostic ;
-- carnet et export PDF enrichis.
+- allègement des productions écrites obligatoires : certains champs deviennent des aides facultatives ;
+- ajout d’un cinquième micro-entraînement oral sur le fil conducteur ;
+- maintien de l’analyse complète des 3 expériences prioritaires avec guidage décroissant ;
+- motivations : 2 réponses minimum au lieu de 4 champs imposés ;
+- préparation de l’oral : introduction + structure indispensables, lien projet et conclusion en approfondissement ;
+- anticipation des questions : une expérience minimum à travailler, les deux autres en approfondissement ;
+- nouvelle grille d’observation de la simulation en 6 critères ;
+- comparaison entre le premier et le deuxième essai ;
+- grille d’observation PDF utilisable par un pair, un formateur ou un accompagnateur ;
+- deuxième simulation conditionnée par l’observation du premier essai et le choix de 2 priorités ;
+- bilan accessible après l’observation du deuxième essai ;
+- export PDF personnel enrichi avec les observations de simulation ;
+- rappels explicites sur la conservation locale des données et la nécessité de télécharger une copie ;
+- accessibilité renforcée : modales dialog accessibles, restitution du focus, touche Échap, piège de focus, états aria-pressed, focus visible, réduction des animations si demandée par le système ;
+- navigation libre conservée dans le sommaire, sans incitation à sortir du parcours guidé.
 
-## Publication
+## Publication GitHub Pages
 
-Déposer le contenu de ce dossier à la racine du dépôt GitHub Pages. Le point d’entrée est `index.html`.
+Déposer le contenu de ce dossier à la racine du dépôt puis activer GitHub Pages sur la branche de publication. Aucun serveur applicatif n’est nécessaire.
