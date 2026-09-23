@@ -1,29 +1,21 @@
-# Valoriser son expérience et présenter son projet professionnel
+# Valoriser son expérience et présenter son projet professionnel — V3 pédagogique
 
-Version web autonome du module IFAP, prête à publier avec GitHub Pages.
+Version autonome pour GitHub Pages.
 
-## Contenu
+## Évolutions V3
 
-- `index.html` : module complet
-- `assets/` : illustrations pédagogiques SVG
-- `assets/infographies/` : six infographies WebP intégrées au parcours
-- `docs/fiche_reflexe_experience_projet.pdf` : fiche réflexe téléchargeable
-- `docs/` : crédits et textes alternatifs
+- accueil recentré sur la promesse, les objectifs, la démarche et la durée ;
+- navigation latérale libre sans incitation à explorer depuis l’accueil ;
+- nouvelle direction visuelle plus chaleureuse : vert IFAP, bleu lagon, jaune, corail et sable ;
+- analyse complète des 3 expériences prioritaires avec guidage décroissant ;
+- autocontrôle des preuves et du projet ;
+- micro-entraînements oraux de 30 à 60 secondes pendant le parcours ;
+- rappels personnalisés issus du diagnostic initial ;
+- conseils adaptés au support d’entretien déclaré ;
+- deux simulations successives avec 2 priorités de progrès ;
+- bilan avant / maintenant sur les 5 dimensions du diagnostic ;
+- carnet et export PDF enrichis.
 
-## Publication avec GitHub Pages
+## Publication
 
-1. Déposer tout le contenu de ce dossier à la racine du dépôt.
-2. Ouvrir **Settings > Pages**.
-3. Choisir **Deploy from a branch**.
-4. Sélectionner la branche `main` et le dossier `/ (root)`.
-5. Enregistrer.
-
-Aucune compilation n’est nécessaire. Les chemins sont relatifs et le site est statique.
-
-## Données du candidat
-
-Les productions personnelles sont conservées localement dans le navigateur dans cette version web. Le candidat peut générer son dossier personnel au format PDF depuis le module.
-
-## Version
-
-Version intégrée - septembre 2026.
+Déposer le contenu de ce dossier à la racine du dépôt GitHub Pages. Le point d’entrée est `index.html`.

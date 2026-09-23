@@ -1,8 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Valoriser son expérience et présenter son projet professionnel</title>
 <style>
 :root{
@@ -59,511 +60,548 @@ footer{grid-area:foot;border-top:1px solid var(--line);display:flex;justify-cont
 .resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:1000px;margin:22px 0}.resource-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:22px;box-shadow:var(--shadow)}.resource-card.primary-resource{background:var(--green-soft);border-color:#c9ddd0}.resource-card h2{margin-bottom:8px}.credit-list{display:grid;gap:14px;max-width:1000px}.credit-block{border-left:4px solid var(--green);padding:4px 0 4px 16px}.credit-block.advice{border-left-color:var(--yellow)}.resource-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.btn-link{text-decoration:none}
 .portrait-infographic{max-width:560px;margin:22px auto 28px}.portrait-infographic img{box-shadow:0 8px 24px rgba(48,54,56,.08)}.portrait-infographic.wide{max-width:620px}.visual-note{max-width:760px;margin:0 auto 18px;text-align:center;color:var(--muted);font-size:14px}
 @media(max-width:800px){.resource-grid{grid-template-columns:1fr}.pedagogical-visual{margin:16px 0 20px}.pedagogical-visual figcaption{font-size:13px}.portrait-infographic,.portrait-infographic.wide{max-width:100%;margin:16px auto 22px}}
+
+/* Accueil et exploration libre */
+.welcome-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:34px;align-items:start;max-width:1120px}
+.welcome-kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:var(--green-soft);color:var(--green-dark);font-size:14px;font-weight:700;margin-bottom:14px}
+.welcome-hero h1{max-width:760px;margin-bottom:12px}.welcome-hero .lead{max-width:760px}
+.welcome-visual{margin:0;max-width:430px;justify-self:end}.welcome-visual img{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.welcome-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0;max-width:800px}.welcome-meta .meta-card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:16px}.meta-card strong{display:block;color:var(--green-dark);font-size:15px;margin-bottom:6px}.meta-card span{display:block;color:var(--muted);font-size:14px;line-height:1.4}
+.welcome-actions{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 8px}.welcome-note{font-size:14px;color:var(--muted);max-width:800px}
+.course-overview{margin-top:40px;scroll-margin-top:90px}.course-overview h2{margin-bottom:6px}.course-overview-intro{color:var(--muted);max-width:820px;margin-bottom:18px}.overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:1080px}.overview-card{appearance:none;text-align:left;border:1px solid var(--line);background:#fff;border-radius:12px;padding:16px;cursor:pointer;transition:.18s ease;min-height:112px;color:var(--text)}.overview-card:hover,.overview-card:focus-visible{border-color:#abc9b7;box-shadow:0 8px 22px rgba(48,54,56,.08);transform:translateY(-1px)}.overview-card .num{display:inline-grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--green-soft);color:var(--green-dark);font-weight:700;font-size:13px;margin-bottom:9px}.overview-card strong{display:block;font-size:16px;margin-bottom:5px}.overview-card span{display:block;color:var(--muted);font-size:13px;line-height:1.4}
+.nav-discovery-note{margin:0 12px 14px;padding:10px 11px;border-radius:10px;background:rgba(255,255,255,.08);font-size:12px;line-height:1.35;color:rgba(255,255,255,.82)}
+@media(max-width:980px){.welcome-hero{grid-template-columns:1fr}.welcome-visual{max-width:520px;justify-self:start}.overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.welcome-meta,.overview-grid{grid-template-columns:1fr}.welcome-visual{max-width:100%}.welcome-actions .btn{width:100%;justify-content:center}.course-overview{margin-top:28px}}
+
+
+/* V3 — direction visuelle : IFAP contemporain, chaleureux, adulte */
+:root{
+  --green:#39735A;--green-2:#285A46;--green-soft:#EAF4EE;
+  --lagoon:#2F8FA3;--lagoon-soft:#E8F5F7;
+  --sun:#F2C84B;--sun-soft:#FFF6D6;
+  --coral:#E7816F;--coral-soft:#FCEDEA;
+  --plum:#78658F;--plum-soft:#F3EFF7;
+  --sand:#F3EEE5;--sand-soft:#FAF7F1;
+  --navy:#263E48;--text:#2D383B;--muted:#647276;--line:#DCE4E1;--bg:#F8F7F3;
+  --radius:16px;--shadow:0 8px 26px rgba(38,62,72,.07);
+}
+body{background:var(--bg);color:var(--text)}
+header,aside,footer{background:rgba(255,255,255,.96);backdrop-filter:saturate(120%) blur(8px)}
+main{max-width:1280px;padding-top:42px}
+h1{color:var(--navy);letter-spacing:-.025em}h2{color:#31484F}.lead{color:#42565C}
+.card,.question-item,.resource-card,.identity-box,.modal-card{border-color:var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.btn{border-radius:10px;transition:transform .12s ease,box-shadow .12s ease,background .12s ease}.btn:not(:disabled):hover{transform:translateY(-1px)}
+.btn.primary{background:var(--green);box-shadow:0 6px 14px rgba(57,115,90,.16)}
+.activity-instruction{background:var(--lagoon-soft);border:0;border-left:5px solid var(--lagoon);border-radius:14px;padding:18px 20px}.activity-instruction strong.title{color:#236F7E}
+.callout.info{background:var(--lagoon-soft);border-color:#B9DFE6}.callout.tip{background:var(--green-soft);border-color:#C5DDCD}.callout{border-radius:14px}
+.card.personal,.production-zone{background:var(--sand-soft);border-color:#E5DAC8}.production-zone{border:1px solid #E5DAC8;border-radius:16px;padding:20px}
+.eyebrow{color:var(--green-2)}
+.screen[data-step="Comprendre les enjeux"] .eyebrow,.screen[data-step="Préparer"] .eyebrow{color:var(--lagoon)}
+.screen[data-step="Sélectionner"] .eyebrow{color:#B57900}.screen[data-step="Démontrer"] .eyebrow{color:var(--green)}
+.screen[data-step="Comprendre mon parcours"] .eyebrow{color:#267F82}.screen[data-step="Construire mon projet"] .eyebrow{color:#C65F4D}
+.screen[data-step="Adapter"] .eyebrow{color:var(--plum)}.screen[data-step="Préparer mon oral"] .eyebrow{color:#356A9B}
+.screen[data-step="M’entraîner"] .eyebrow{color:#A76416}.screen[data-step="Bilan"] .eyebrow{color:#267F82}
+.nav button{padding:11px 12px;border-radius:10px}.nav button.active{background:#F0F7F3;color:var(--green-2);box-shadow:inset 4px 0 0 var(--green)}
+.nav button:nth-child(1) .dot,.nav button:nth-child(2) .dot{border-color:var(--lagoon)}
+.nav button:nth-child(3) .dot{border-color:var(--sun)}.nav button:nth-child(4) .dot{border-color:var(--green)}
+.nav button:nth-child(5) .dot{border-color:#2D9390}.nav button:nth-child(6) .dot{border-color:var(--coral)}
+.nav button:nth-child(7) .dot{border-color:var(--plum)}.nav button:nth-child(8) .dot{border-color:#4777A4}
+.nav button:nth-child(9) .dot{border-color:#C98631}.nav button:nth-child(10) .dot{border-color:#2D9390}
+.nav button:nth-child(11) .dot{border-color:#77817F}
+.welcome-hero{background:linear-gradient(135deg,#FFFFFF 0%,#F4FAF7 55%,#EEF7F8 100%);border:1px solid #DDE9E4;border-radius:24px;padding:34px;box-shadow:0 16px 44px rgba(38,62,72,.08)}
+.welcome-meta .meta-card{background:rgba(255,255,255,.9);border-radius:14px;box-shadow:none}.welcome-actions{margin-top:22px}.welcome-note,.course-overview{display:none!important}
+.pedagogical-visual img{border-radius:18px;box-shadow:0 10px 30px rgba(38,62,72,.06)}
+.project-step:nth-child(1){border-left:4px solid var(--green)}.project-step:nth-child(2){border-left:4px solid var(--sun)}.project-step:nth-child(3){border-left:4px solid var(--lagoon)}.project-step:nth-child(4){border-left:4px solid var(--coral)}
+.micro-practice{margin:24px 0;padding:20px;border-radius:16px;background:linear-gradient(135deg,var(--coral-soft),#fff);border:1px solid #F0C7BE;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+.micro-practice .micro-label{font-size:12px;letter-spacing:.07em;text-transform:uppercase;font-weight:800;color:#B34F3D}.micro-practice h2{margin:3px 0 6px}.micro-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}.micro-time{font-size:26px;font-weight:800;color:var(--navy);min-width:74px;text-align:center;font-variant-numeric:tabular-nums}.micro-done{font-size:14px;color:var(--green-2);font-weight:700}
+.personal-focus{margin:14px 0 22px;padding:13px 16px;border-radius:12px;background:var(--sun-soft);border-left:4px solid var(--sun);font-size:15px}.personal-focus strong{color:#765C00}
+.exp-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 20px}.exp-tab{border:1px solid var(--line);background:white;border-radius:12px;padding:11px 14px;text-align:left;min-width:180px}.exp-tab.active{border-color:var(--green);background:var(--green-soft);box-shadow:inset 0 0 0 1px var(--green)}.exp-tab .level{display:block;font-size:12px;color:var(--muted);margin-top:3px}.exp-tab.complete:after{content:" ✓";color:var(--green);font-weight:800}
+.self-check{margin-top:18px;background:var(--sand-soft);border:1px solid #E4D9C8;border-radius:14px;padding:16px}.self-check-grid{display:grid;gap:8px;margin-top:10px}.self-check label{display:flex;gap:9px;align-items:flex-start;font-size:15px}.self-check input{margin-top:4px}
+.context-advice{background:var(--plum-soft);border-left:4px solid var(--plum);border-radius:14px;padding:15px 17px;margin:16px 0}.context-advice strong{color:#625177}
+.project-check{display:grid;gap:9px;margin-top:12px}.project-check label{display:flex;gap:9px;align-items:flex-start;padding:10px 12px;background:#fff;border:1px solid var(--line);border-radius:10px}
+.attempt-strip{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.attempt-pill{padding:7px 11px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:14px}.attempt-pill.done{background:var(--green-soft);border-color:#BED7C7;color:var(--green-2);font-weight:700}
+.compare-grid{display:grid;grid-template-columns:1.5fr .75fr .75fr;gap:10px;align-items:center}.compare-head{font-size:12px;font-weight:800;text-transform:uppercase;color:var(--muted)}.compare-row{display:contents}.compare-label,.compare-value{padding:12px;border-bottom:1px solid var(--line)}.compare-value{text-align:center;font-weight:700}.compare-value.start{color:var(--muted)}.compare-value.now{color:var(--green-2);background:#F2F8F4;border-radius:8px}
+@media(max-width:800px){.welcome-hero{padding:20px}.micro-practice{grid-template-columns:1fr}.micro-actions{justify-content:flex-start}.compare-grid{grid-template-columns:1fr}.compare-head{display:none}.compare-row{display:block;border-bottom:1px solid var(--line);padding:10px 0}.compare-label,.compare-value{display:inline-block;border:0;padding:5px}.compare-value:before{font-size:12px;color:var(--muted)}.compare-value.start:before{content:"Début : "}.compare-value.now:before{content:"Maintenant : "}}
 </style>
 </head>
 <body>
 <div class="app" id="app">
-  <aside>
-    <div class="logo">◉ <span>Expérience &<br>projet professionnel</span></div>
-    <nav class="nav" id="sideNav"></nav>
-  </aside>
-  <header>
-    <button class="icon-btn mobile-menu" id="mobileMenu">☰ <span>Sommaire</span></button>
-    <div class="brand">Expérience & projet professionnel</div>
-    <div class="progress-wrap"><span class="progress-txt" id="progressTxt">0 %</span><div class="progress"><span id="progressBar"></span></div></div>
-    <div class="head-actions">
-      <button id="openNotebook">▣ <span>Mon carnet</span></button>
-      <a class="reflex" href="docs/fiche_reflexe_experience_projet.pdf" target="_blank" rel="noopener" title="Ouvrir la fiche réflexe PDF">▤ <span>Fiche réflexe</span></a>
-      <button id="fullscreenBtn">⛶ <span>Plein écran</span></button>
-    </div>
-  </header>
-  <main>
-    <section class="screen active" data-screen="0" data-step="Comprendre les enjeux">
-      <div class="eyebrow">Comprendre les enjeux</div>
-      <h1>Parler de son parcours, ce n’est pas raconter son passé</h1>
-      <p class="lead">Lors d’un entretien, votre interlocuteur ne cherche pas seulement à savoir <strong>ce que vous avez fait</strong>. Il cherche à comprendre <strong>ce que vos expériences ont construit</strong> et ce que vous êtes prêt à faire ensuite.</p>
-      <div class="activity-instruction">
-        <strong class="title">Ce que vous allez comprendre sur cet écran</strong>
-        <p style="margin:0">Pourquoi une simple chronologie de vos postes ne suffit pas, et ce que votre interlocuteur essaie réellement de saisir à travers votre parcours.</p>
-        <p class="next"><strong>Ensuite :</strong> vous découvrirez les questions qui se cachent derrière la plupart des entretiens portant sur l’expérience professionnelle.</p>
-      </div>
-      <figure class="pedagogical-visual compact">
-        <img src="assets/01_donner_du_sens.svg" alt="Schéma montrant que plusieurs expériences professionnelles sont filtrées pour faire ressortir les compétences, la progression, le projet et les motivations." />
-        <figcaption>Votre parcours fournit la matière ; votre préparation consiste à en faire ressortir ce qui est utile à l’entretien.</figcaption>
-      </figure>
-      <div class="callout tip meaning-signature"><strong>À retenir :</strong> votre parcours est le matériau. <strong>L’enjeu de l’entretien est de lui donner du sens.</strong></div>
-    </section>
-
-    <section class="screen" data-screen="1" data-step="Comprendre les enjeux">
-      <div class="eyebrow">Comprendre les enjeux</div>
-      <h1>Ce que votre interlocuteur cherche à comprendre</h1>
-      <p class="lead">Les questions peuvent être formulées de nombreuses façons. Mais derrière elles, votre interlocuteur cherche souvent à éclairer cinq dimensions.</p>
-      <div class="activity-instruction">
-        <strong class="title">Ce que vous devez faire</strong>
-        <p style="margin:0">Parcourez les 5 questions ci-dessous. Pour chacune, demandez-vous simplement : <strong>« Est-ce que je saurais y répondre aujourd’hui avec un exemple précis ? »</strong></p>
-        <p class="next"><strong>Il n’y a rien à saisir.</strong> L’objectif est de comprendre ce que votre présentation devra progressivement rendre visible.</p>
-      </div>
-      <figure class="pedagogical-visual portrait-infographic wide">
-        <img src="assets/infographies/03_ce_que_interlocuteur_cherche.webp" alt="Infographie comparant ce que le candidat peut raconter spontanément et ce que l’interlocuteur cherche réellement à comprendre : compétences, recul, progression, motivations, environnement professionnel et capacité à se projeter." />
-        <figcaption>Parler de son parcours ne consiste pas seulement à citer des postes ou des missions : l’enjeu est de rendre visibles ce qu’ils révèlent de vous professionnellement.</figcaption>
-      </figure>
-      <div class="cards question-grid">
-        <div class="card"><span class="badge">1</span><h2>Qui êtes-vous professionnellement aujourd’hui ?</h2><p class="muted">Au-delà de votre intitulé de poste, quelles compétences et quels rôles vous caractérisent ?</p></div>
-        <div class="card"><span class="badge">2</span><h2>Qu’avez-vous réellement appris de vos expériences ?</h2><p class="muted">Qu’est-ce qui a évolué dans votre manière de travailler ?</p></div>
-        <div class="card"><span class="badge">3</span><h2>Que savez-vous faire et comment pouvez-vous le démontrer ?</h2><p class="muted">Quelles situations concrètes permettent de constater vos compétences ?</p></div>
-        <div class="card"><span class="badge">4</span><h2>Pourquoi souhaitez-vous évoluer, changer ou progresser ?</h2><p class="muted">Qu’est-ce qui vous attire réellement dans la suite envisagée ?</p></div>
-        <div class="card"><span class="badge">5</span><h2>Pourquoi votre projet est-il cohérent avec votre parcours ?</h2><p class="muted">Quels acquis rendent votre projet crédible et compréhensible ?</p></div>
-      </div>
-      <div class="callout info"><strong>Important :</strong> vous ne serez pas forcément interrogé exactement avec ces mots. Ces cinq questions donnent une grille de lecture des enjeux de nombreux entretiens professionnels.</div>
-    </section>
-
-    <section class="screen" data-screen="2" data-step="Comprendre les enjeux">
-      <div class="eyebrow">Comprendre les enjeux</div>
-      <h1>Le piège : confondre parcours et chronologie</h1>
-      <p class="lead">Deux personnes répondent à la même question : <strong>« Pouvez-vous nous présenter votre parcours ? »</strong></p>
-      <div class="activity-instruction">
-        <strong class="title">Ce que vous devez faire</strong>
-        <ol>
-          <li>Lisez les deux réponses.</li>
-          <li>Choisissez celle qui aide le mieux à comprendre <strong>l’évolution professionnelle</strong> de la personne.</li>
-          <li>Lisez le feedback avant de continuer.</li>
-        </ol>
-        <p class="next"><strong>Pourquoi cette activité ?</strong> Pour distinguer une succession de faits d’une présentation qui donne une lecture du parcours.</p>
-      </div>
-      <div class="contrast-grid" id="chronologyQuiz">
-        <label class="card contrast-card"><input type="radio" name="chronology" value="a"><div><span class="badge blue">Réponse A</span><p>« J’ai commencé en 2012 comme gestionnaire. En 2016, j’ai rejoint un autre service. En 2020, je suis devenue chargée de projet, puis en 2024 responsable d’unité. »</p></div></label>
-        <label class="card contrast-card"><input type="radio" name="chronology" value="b"><div><span class="badge">Réponse B</span><p>« Mon parcours m’a progressivement conduite de fonctions de gestion vers des fonctions d’analyse puis de coordination. Trois expériences ont particulièrement structuré cette évolution et expliquent aujourd’hui mon projet. »</p></div></label>
-      </div>
-      <div id="chronologyFeedback" class="callout tip" style="display:none"></div>
-    </section>
-
-    <section class="screen" data-screen="3" data-step="Comprendre les enjeux">
-      <div class="eyebrow">Comprendre les enjeux</div>
-      <h1>Ce qui fragilise souvent une présentation</h1>
-      <p class="lead">Une présentation peut être exacte et sincère, tout en restant peu convaincante. Voici quatre pièges fréquents à éviter.</p>
-      <div class="activity-instruction">
-        <strong class="title">Ce que vous devez faire</strong>
-        <p style="margin:0">Lisez les quatre pièges. Repérez mentalement celui dans lequel vous pourriez le plus facilement tomber aujourd’hui.</p>
-        <p class="next"><strong>Vous n’avez rien à déclarer.</strong> Ces repères vont simplement vous aider à comprendre pourquoi la méthode du module est construite comme elle l’est.</p>
-      </div>
-      <div class="cards risk-grid">
-        <div class="card"><div class="risk-icon">1</div><h2>Tout raconter</h2><p>À vouloir être exhaustif, vous utilisez le temps disponible sans vraiment mettre en valeur ce qui compte.</p><div class="small muted"><strong>Le besoin :</strong> sélectionner.</div></div>
-        <div class="card"><div class="risk-icon">2</div><h2>Affirmer sans démontrer</h2><p>« Je suis autonome », « je sais manager », « je travaille en transversalité » restent des affirmations sans situation concrète.</p><div class="small muted"><strong>Le besoin :</strong> apporter des preuves.</div></div>
-        <div class="card"><div class="risk-icon">3</div><h2>Présenter un projet déconnecté</h2><p>Un projet est plus crédible lorsque l’on comprend ce qui, dans le parcours, conduit à cette évolution.</p><div class="small muted"><strong>Le besoin :</strong> relier.</div></div>
-        <div class="card"><div class="risk-icon">4</div><h2>Apprendre un texte</h2><p>Une présentation récitée peut se fragiliser dès que l’entretien sort du scénario préparé.</p><div class="small muted"><strong>Le besoin :</strong> comprendre son parcours suffisamment bien pour en parler avec souplesse.</div></div>
-      </div>
-      <div class="callout tip"><strong>La préparation ne consiste pas à écrire un discours parfait.</strong> Elle consiste à suffisamment analyser son parcours pour pouvoir en parler avec précision, recul et souplesse.</div>
-    </section>
-
-    <section class="screen" data-screen="4" data-step="Comprendre les enjeux">
-      <div class="hero">
-        <div class="eyebrow">Passer à la démarche</div>
-        <h1>Vous savez maintenant ce que vous allez chercher à construire</h1>
-        <p class="lead">La suite du module va vous aider à passer d’un ensemble d’expériences à un <strong>argumentaire professionnel personnel, cohérent et adaptable</strong>.</p>
-        <div class="activity-instruction" style="text-align:left;max-width:900px;margin:20px auto 28px">
-          <strong class="title">La démarche en 8 repères</strong>
-          <p style="margin:0">Vous allez travailler sur votre propre parcours. Chaque étape prépare la suivante ; vous n’avez pas à produire un discours complet dès le départ.</p>
-        </div>
-        <figure class="pedagogical-visual portrait-infographic wide">
-          <img src="assets/infographies/01_parcours_preparation.webp" alt="Carte du parcours de préparation en huit repères : comprendre les enjeux, sélectionner ses expériences, démontrer par des preuves, relier son parcours, se situer professionnellement, se projeter, adapter à l’entretien et s’entraîner pour progresser." />
-          <figcaption>Cette carte donne le cap. Vous n’avez pas à tout construire d’un seul coup : chaque étape prépare la suivante.</figcaption>
-        </figure>
-        <div class="callout info" style="max-width:820px;margin:0 auto 24px;text-align:left"><strong>Vous allez commencer par sélectionner vos propres expériences.</strong> Rien n’est prérempli : le matériau de la formation sera votre parcours.</div>
-        <button class="btn primary" data-next>Commencer à travailler sur mon parcours →</button>
-      </div>
-    </section>
-
-
-
-    <section class="screen" data-screen="5" data-step="Préparer">
-      <div class="eyebrow">Préparer</div><h1>Configurez l’entretien que vous préparez</h1>
-      <p class="lead">Votre méthode restera la même, mais votre présentation doit tenir compte du contexte, du support éventuel et du temps disponible.</p>
-      <div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Choisissez le contexte qui ressemble le plus à votre situation.</li><li>Indiquez le document éventuel sur lequel l’entretien s’appuie.</li><li>Indiquez la durée de présentation si vous la connaissez.</li></ol><p class="next"><strong>Pourquoi ?</strong> Ces informations permettront au module d’adapter les conseils de préparation et le chronomètre final.</p></div>
-      <h2>1. Dans quel contexte allez-vous parler de votre expérience et de votre projet ?</h2>
-      <div class="context-grid" id="contextType">
-        <label class="option-card"><input type="radio" name="ctx" value="exam"><div><strong>Concours ou examen professionnel</strong><div class="small muted">Une épreuve ou un entretien lié à une évolution statutaire.</div></div></label>
-        <label class="option-card"><input type="radio" name="ctx" value="selection"><div><strong>Sélection ou intégration</strong><div class="small muted">Une sélection fondée sur le parcours, les compétences et les motivations.</div></div></label>
-        <label class="option-card"><input type="radio" name="ctx" value="mobility"><div><strong>Mobilité ou recrutement</strong><div class="small muted">Un poste ou des fonctions que vous souhaitez rejoindre.</div></div></label>
-        <label class="option-card"><input type="radio" name="ctx" value="promotion"><div><strong>Évolution ou promotion professionnelle</strong><div class="small muted">Une évolution de responsabilités, d’expertise ou de fonctions.</div></div></label>
-        <label class="option-card"><input type="radio" name="ctx" value="other"><div><strong>Autre entretien</strong><div class="small muted">Toute situation où vous devez parler de votre parcours et de votre projet.</div></div></label>
-      </div>
-      <div class="divider"></div>
-      <div class="two-col">
-        <div class="field"><label for="sourceDocument">2. Sur quoi l’entretien s’appuiera-t-il ?</label><div class="help">Choisissez ce que votre interlocuteur aura éventuellement sous les yeux.</div><select id="sourceDocument"><option value="">Choisir…</option><option value="cv">Un CV</option><option value="professional_file">Un dossier professionnel</option><option value="information_sheet">Une fiche individuelle de renseignements</option><option value="experience_file">Un dossier présentant une ou plusieurs expériences</option><option value="other">Un autre document</option><option value="none">Aucun document particulier</option><option value="unknown">Je ne sais pas encore</option></select></div>
-        <div class="field"><label for="contextDuration">3. Combien de temps avez-vous pour vous présenter ?</label><div class="help">Si vous ne le savez pas, laissez le champ vide : vous pourrez le définir plus tard.</div><input id="contextDuration" type="number" min="1" max="30" placeholder="Ex. 10" /></div>
-      </div>
-      <div id="contextSummary" class="callout info" style="display:none"></div>
-    </section>
-
-    <section class="screen" data-screen="6" data-step="Préparer">
-      <div class="eyebrow">Préparer</div><h1>Avant de commencer, où en êtes-vous ?</h1>
-      <p class="lead">Ce rapide auto-positionnement ne mesure pas votre niveau professionnel. Il vous aide à repérer les points sur lesquels vous aurez le plus besoin de travailler.</p>
-      <div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><p>Pour chacune des 5 affirmations, choisissez la réponse qui vous correspond aujourd’hui. Répondez spontanément : il n’y a ni note ni bonne réponse.</p><p class="next"><strong>Quand vous aurez terminé :</strong> vous verrez les dimensions que le module va vous aider à consolider.</p></div>
-      <div id="diagnosticList" class="question-builder"></div>
-      <button class="btn primary" id="saveDiagnostic">Voir mes points de vigilance</button>
-      <div id="diagnosticSummary" class="summary-card" style="display:none;margin-top:18px"></div>
-    </section>
-
-    <section class="screen" data-screen="7" data-step="Sélectionner">
-      <div class="section-top">
-        <div><div class="eyebrow">Sélectionner</div><h1>Passez votre parcours au scanner</h1><p class="lead">Construisez d’abord votre propre liste d’expériences, puis choisissez celles qui seront les plus utiles pour votre entretien.</p></div>
-        <div class="count" id="scannerCount">0 expérience saisie / 3 minimum</div>
-      </div>
-
-
-      <div class="activity-instruction">
-        <strong class="title">Ce que vous devez faire</strong>
-        <ol>
-          <li>Ajoutez <strong>au moins 3 expériences qui vous appartiennent</strong>.</li>
-          <li>Pour chacune, indiquez brièvement ce que vous avez réellement fait et ce qu’elle peut montrer.</li>
-          <li>Quand votre liste est prête, classez <strong>exactement 3 expériences</strong> dans « À développer dans ma présentation ».</li>
-        </ol>
-        <p class="next"><strong>Quand vous aurez terminé :</strong> le bouton « Continuer » s’activera et vous apprendrez à transformer ces expériences en preuves.</p>
-      </div>
-      <figure class="pedagogical-visual portrait-infographic">
-        <img src="assets/infographies/02_selection_experiences.webp" alt="Entonnoir montrant comment passer de nombreuses expériences à trois expériences prioritaires en retenant celles qui sont pertinentes pour l’entretien, riches en preuves, utiles pour montrer la progression et liées au projet." />
-        <figcaption>Le but n’est pas d’être exhaustif : privilégiez la qualité de l’analyse et la pertinence des expériences retenues.</figcaption>
-      </figure>
-      <div class="scanner-guide" aria-label="Les trois étapes de l’activité">
-        <div class="guide-step"><div class="guide-num">1</div><h3>Ajoutez vos expériences</h3><p class="small">Saisissez au moins <strong>3 expériences qui vous correspondent</strong> : poste, mission, projet, responsabilité particulière ou situation marquante.</p></div>
-        <div class="guide-step"><div class="guide-num">2</div><h3>Décrivez l’essentiel</h3><p class="small">Pour chacune, notez ce que vous avez <strong>réellement fait</strong> et ce qu’elle pourrait permettre de montrer. Inutile de recopier votre CV.</p></div>
-        <div class="guide-step"><div class="guide-num">3</div><h3>Choisissez vos 3 priorités</h3><p class="small">Lorsque vous aurez au moins 3 expériences, sélectionnez les <strong>3 plus représentatives et utiles</strong> pour votre entretien.</p></div>
-      </div>
-
-      <div id="scannerPhaseNote"></div>
-      <div class="cards" id="experienceCards"></div>
-      <div id="scannerEmpty" class="empty-state">
-        <h2>Votre parcours commence ici</h2>
-        <p>Ajoutez une première expérience de votre parcours professionnel. Si vous hésitez, pensez par exemple à :</p>
-        <p class="small muted">un poste qui vous a fait progresser · un projet dont vous êtes fier · une situation où vous avez pris des responsabilités · une mission qui montre une expertise · une expérience qui explique votre projet actuel</p>
-        <button class="btn primary" id="addFirstExperience">＋ Ajouter ma première expérience</button>
-      </div>
-      <div class="add-box" id="addExperienceBox" style="display:none"><button class="btn secondary" id="addExperience">＋ Ajouter une autre expérience</button><p class="small muted" style="margin:8px 0 0">Vous pouvez en saisir jusqu’à 6 avant de choisir vos 3 priorités.</p></div>
-      <div class="callout info"><strong>Question repère :</strong> pour chaque expérience, demandez-vous : « qu’est-ce qu’elle permettra à mon interlocuteur de comprendre de moi professionnellement ? »</div>
-    </section>
-
-    <section class="screen" data-screen="8" data-step="Démontrer">
-      <div class="eyebrow">Démontrer</div>
-      <h1>Transformer une expérience en preuve</h1>
-      <p class="lead">Vous avez choisi des expériences importantes. Il faut maintenant apprendre à expliquer <strong>ce qu’elles prouvent réellement</strong>.</p>
-
-      <div class="activity-instruction">
-        <strong class="title">Ce que vous devez faire</strong>
-        <ol>
-          <li>Lisez les 5 questions de la chaîne de la preuve.</li>
-          <li>Observez l’exemple.</li>
-          <li>Répondez au micro-défi en bas de l’écran.</li>
-        </ol>
-        <p class="next"><strong>Vous n’avez rien à rédiger ici.</strong> Quand le micro-défi est terminé, « Continuer » s’active et vous appliquez la méthode à votre propre expérience.</p>
-      </div>
-
-      <h2 style="margin-top:28px">1. Comprenez la chaîne de la preuve</h2>
-      <p class="muted" style="max-width:820px">Pour qu’une expérience soit convaincante, votre interlocuteur doit pouvoir comprendre le contexte, votre contribution personnelle, ce qu’elle a produit, la compétence qu’elle révèle et ce que vous en avez appris.</p>
-      <figure class="pedagogical-visual">
-        <img src="assets/02_chaine_de_la_preuve.svg" alt="Schéma en cinq étapes : situation, action, résultat, compétence et recul. Il montre comment transformer une expérience vécue en preuve de compétence." />
-        <figcaption>Utilisez cette chaîne pour analyser vos expériences avant l’oral ; elle n’a pas vocation à être récitée.</figcaption>
-      </figure>
-
-      <div class="card" style="max-width:900px;margin:20px 0;background:var(--green-soft);border-color:#cee0d4">
-        <div class="eyebrow">Exemple</div>
-        <p style="margin:0"><strong>Au lieu de :</strong> « Je sais travailler en transversalité. »</p>
-        <p style="margin:10px 0 0"><strong>Une preuve commence plutôt par :</strong> « Pour harmoniser une procédure utilisée différemment par trois services, j’ai réuni les acteurs concernés, fait expliciter leurs contraintes et construit avec eux un circuit commun. »</p>
-        <p class="small muted" style="margin:10px 0 0">L’interlocuteur peut alors constater la transversalité à partir d’une situation réelle, au lieu de devoir croire une simple affirmation.</p>
-      </div>
-
-      <div class="card" style="max-width:760px;margin-top:26px">
-        <div class="eyebrow">2. Vérifiez votre réflexe</div>
-        <h2>Micro-défi</h2>
-        <p>Vous dites : <strong>« Je sais travailler en transversalité. »</strong></p>
-        <p><strong>Quelle question devez-vous maintenant vous poser pour transformer cette affirmation en preuve ?</strong></p>
-        <div class="choice-list" id="proofQuiz">
-          <label class="choice"><input type="radio" name="pq" value="a"> Depuis combien de temps ?</label>
-          <label class="choice"><input type="radio" name="pq" value="b"> Qui peut confirmer cette compétence ?</label>
-          <label class="choice"><input type="radio" name="pq" value="c"> Qu’ai-je réellement fait qui permet de le constater ?</label>
-          <label class="choice"><input type="radio" name="pq" value="d"> Est-ce écrit dans ma fiche de poste ?</label>
-        </div>
-        <div id="proofFeedback" class="callout tip" style="display:none"></div>
-        <p id="proofNextHint" class="small muted" style="display:none;margin:12px 0 0">Une fois votre réponse lue, cliquez sur <strong>Continuer</strong> : vous utiliserez cette méthode sur votre propre expérience.</p>
-      </div>
-    </section>
-
-    <section class="screen" data-screen="9" data-step="Démontrer">
-      <div class="eyebrow">Démontrer</div><h1>Mon laboratoire d’expérience</h1>
-      <p class="lead">Analysez maintenant l’une de vos expériences prioritaires pour en faire une preuve claire et utilisable à l’oral.</p>
-      <div class="activity-instruction">
-        <strong class="title">Ce que vous devez faire</strong>
-        <ol>
-          <li>Travaillez sur votre <strong>expérience prioritaire n° 1</strong> ; vous pourrez ensuite faire la même chose pour les deux autres.</li>
-          <li>Répondez, dans l’ordre, aux 5 questions : situation, action, résultat, compétence et recul.</li>
-          <li>À chaque étape, écrivez quelques phrases simples. Utilisez le conseil et l’exemple à droite si vous en avez besoin.</li>
-          <li>À la dernière étape, cliquez sur <strong>« Voir ma synthèse »</strong>.</li>
-        </ol>
-        <p class="next"><strong>Quand vous aurez terminé :</strong> vous disposerez d’une fiche synthétique de cette expérience, à réutiliser pour votre préparation orale.</p>
-      </div>
-      <div id="labTitle" class="section-top"><div><h2>Expérience prioritaire</h2><span class="badge">EXPÉRIENCE PRIORITAIRE</span></div></div>
-      <div class="lab-wrap">
-        <div class="lab-nav" id="labNav"></div>
-        <div class="card">
-          <div id="labStages"></div>
-          <div style="display:flex;justify-content:space-between;gap:10px;margin-top:18px"><button class="btn ghost" id="labBack">← Étape précédente</button><button class="btn primary" id="labNext">Étape suivante →</button></div>
-        </div>
-        <div class="lab-side">
-          <div class="card" style="background:var(--blue-soft)"><div class="eyebrow" style="color:var(--blue)">Mon conseil</div><p id="labAdvice">Soyez précis sur vos choix et votre rôle.</p></div>
-          <div class="card"><div class="eyebrow">Exemple</div><p id="labExample">J’ai coordonné les échanges, proposé un calendrier et préparé les arbitrages nécessaires.</p></div>
-        </div>
-      </div>
-      <div class="summary-card" id="labSummary" style="display:none"></div>
-    </section>
-
-
-
-    <section class="screen" data-screen="10" data-step="Comprendre mon parcours">
-      <div class="eyebrow">Relier</div><h1>Repérez votre progression professionnelle</h1>
-      <p class="lead">Progresser ne signifie pas seulement changer de poste ou de grade. Une progression peut concerner l’expertise, l’autonomie, la complexité, les responsabilités ou encore la capacité à travailler avec d’autres acteurs.</p>
-      <div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Sélectionnez les dimensions qui ont réellement évolué dans votre parcours.</li><li>Choisissez ensuite les 3 dimensions que vous souhaitez faire apparaître en priorité dans votre entretien.</li><li>Écrivez en quelques lignes ce qui vous fait dire que vous avez progressé sur ces dimensions.</li></ol><p class="next"><strong>Le but :</strong> passer d’une succession d’expériences à une lecture de votre évolution professionnelle.</p></div>
-      <div class="chip-wrap" id="progressionChips"></div>
-      <div class="field"><label for="progressionSummary">Comment décririez-vous votre progression ?</label><div class="help">Appuyez-vous sur des faits : davantage d’autonomie, des situations plus complexes, un rôle plus transversal, une expertise devenue reconnue…</div><textarea id="progressionSummary" placeholder="Avec le temps, j’ai progressivement…"></textarea></div>
-      <div id="progressionPreview" class="screen-summary" style="display:none"></div>
-    </section>
-
-    <section class="screen" data-screen="11" data-step="Comprendre mon parcours">
-      <div class="eyebrow">Relier</div><h1>Trouvez le fil conducteur de votre parcours</h1>
-      <p class="lead">Votre parcours n’a pas besoin d’avoir été planifié pour être cohérent. Le fil conducteur consiste à identifier, avec recul, ce qui relie réellement plusieurs étapes.</p>
-      <div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Repérez ce qui revient dans plusieurs expériences : un type de contribution, une compétence, un domaine, une façon d’agir ou des responsabilités croissantes.</li><li>Complétez les trois amorces ci-dessous.</li><li>Terminez par une phrase courte qui résume votre fil conducteur.</li></ol><p class="next"><strong>À éviter :</strong> réécrire votre passé comme si tout avait été prévu depuis le début.</p></div>
-      <div class="field"><label for="threadObserve">Lorsque je regarde mon parcours dans son ensemble, je constate que…</label><textarea id="threadObserve"></textarea></div>
-      <div class="field"><label for="threadCommon">Plusieurs de mes expériences ont en commun…</label><textarea id="threadCommon"></textarea></div>
-      <div class="field"><label for="threadEvolution">Progressivement, j’ai développé…</label><textarea id="threadEvolution"></textarea></div>
-      <div class="field"><label for="threadSummary">Mon fil conducteur en une phrase</label><input id="threadSummary" placeholder="Ex. Mon parcours m’a progressivement conduit vers des fonctions de coordination et d’accompagnement du changement." /></div>
-    </section>
-
-    <section class="screen" data-screen="12" data-step="Comprendre mon parcours">
-      <div class="eyebrow">Se situer</div><h1>Qui êtes-vous professionnellement aujourd’hui ?</h1>
-      <p class="lead">Avant de parler de votre futur, prenez un arrêt sur image. L’entretien doit permettre de comprendre le professionnel que vos expériences ont construit aujourd’hui.</p>
-      <div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Répondez aux trois questions à partir de situations réellement observées dans votre travail.</li><li>Évitez les qualités générales comme « motivé » ou « sérieux » : cherchez ce que l’on peut constater dans votre activité.</li><li>Terminez par une phrase de synthèse.</li></ol><p class="next"><strong>Cette synthèse vous servira ensuite à construire votre introduction.</strong></p></div>
-      <figure class="pedagogical-visual portrait-infographic">
-        <img src="assets/infographies/04_passe_au_projet.webp" alt="Infographie reliant hier, aujourd’hui et demain : les expériences passées construisent l’identité professionnelle actuelle, qui éclaire ensuite le projet professionnel futur." />
-        <figcaption>Le fil conducteur relie vos expériences passées, ce qu’elles ont construit chez vous et la direction dans laquelle vous souhaitez évoluer.</figcaption>
-      </figure>
-      <div class="identity-box">
-        <div class="field"><label for="identityEase">Dans quelles situations êtes-vous aujourd’hui particulièrement à l’aise ?</label><textarea id="identityEase"></textarea></div>
-        <div class="field"><label for="identityAsked">Pour quoi vient-on vous solliciter ?</label><textarea id="identityAsked"></textarea></div>
-        <div class="field"><label for="identityContribution">Qu’est-ce que votre parcours vous permet aujourd’hui d’apporter ?</label><textarea id="identityContribution"></textarea></div>
-        <div class="field"><label for="identitySummary">Si vous deviez vous présenter professionnellement en une phrase</label><input id="identitySummary" placeholder="Aujourd’hui, je suis un professionnel qui…" /></div>
-      </div>
-    </section>
-
-    <section class="screen" data-screen="13" data-step="Construire mon projet">
-      <div class="eyebrow">Se projeter</div><h1>Construisez votre projet professionnel</h1><p class="lead">Un projet solide relie ce que vous souhaitez, ce qui vous motive et ce que votre parcours rend crédible.</p>
-      <div class="activity-instruction">
-        <strong class="title">Ce que vous devez faire</strong>
-        <ol>
-          <li>Cliquez sur <strong>« Compléter »</strong> dans chacun des 4 blocs.</li>
-          <li>Répondez avec vos propres mots ; quelques phrases suffisent.</li>
-          <li>Quand les 4 blocs sont remplis, cliquez sur <strong>« Tester la solidité de mon projet »</strong>.</li>
-        </ol>
-        <p class="next"><strong>Le but :</strong> vérifier que votre projet est précis, cohérent avec votre parcours, motivé et orienté vers une contribution. Il n’y a pas de « bonne réponse » attendue.</p>
-      </div>
-      <figure class="pedagogical-visual">
-        <img src="assets/03_coherence_parcours_projet.svg" alt="Chaîne reliant expériences, compétences, identité professionnelle, projet et contribution afin de montrer la cohérence entre le parcours passé et la projection professionnelle." />
-        <figcaption>Le projet est plus convaincant lorsqu’il apparaît comme une suite compréhensible de ce que le parcours a construit.</figcaption>
-      </figure>
-      <div class="project-grid">
-        <div>
-          <div class="project-step"><div class="n">1</div><div><strong>Je souhaite…</strong><div class="small muted">Qu’aimeriez-vous davantage exercer ou développer ?</div></div><button class="btn ghost proj-edit" data-proj="wish">Compléter</button></div>
-          <div class="project-step"><div class="n" style="color:#d58b00">2</div><div><strong>Parce que…</strong><div class="small muted">Pourquoi cette évolution vous attire-t-elle ?</div></div><button class="btn ghost proj-edit" data-proj="why">Compléter</button></div>
-          <div class="project-step"><div class="n" style="color:#3565a8">3</div><div><strong>Mon parcours m’y prépare…</strong><div class="small muted">Quelles expériences ou compétences rendent ce projet crédible ?</div></div><button class="btn ghost proj-edit" data-proj="prep">Compléter</button></div>
-          <div class="project-step"><div class="n" style="color:#6551a4">4</div><div><strong>Je souhaite apporter…</strong><div class="small muted">Quelle contribution souhaitez-vous développer ?</div></div><button class="btn ghost proj-edit" data-proj="contrib">Compléter</button></div>
-        </div>
-        <div>
-          <div class="card" style="background:#fffaf0"><div class="eyebrow" style="color:#826600">À retenir</div><p>Un projet professionnel cohérent vous permet de convaincre par votre constance et votre clarté.</p></div>
-          <button class="btn secondary" style="width:100%;margin-top:12px" id="testProject">Tester la solidité de mon projet →</button>
-        </div>
-      </div>
-      <div class="summary-card" id="projectSummary" style="display:none"></div>
-    </section>
-
-
-
-    <section class="screen" data-screen="14" data-step="Construire mon projet">
-      <div class="eyebrow">Se projeter</div><h1>Expliquez vos motivations</h1>
-      <p class="lead">Votre projet indique où vous souhaitez aller. Vos motivations permettent de comprendre pourquoi cette évolution a du sens pour vous.</p>
-      <div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Répondez aux quatre questions avec des idées concrètes.</li><li>Reliez vos motivations au contenu des fonctions ou de l’évolution recherchée.</li><li>Ne cherchez pas à masquer les motivations personnelles : approfondissez-les pour en faire un argument professionnel.</li></ol><p class="next"><strong>Le but :</strong> dépasser une motivation limitée à « réussir l’examen », « changer de grade » ou « changer de poste ».</p></div>
-      <div class="two-col">
-        <div class="field"><label for="motAttract">Qu’est-ce qui vous attire dans cette évolution ?</label><textarea id="motAttract"></textarea></div>
-        <div class="field"><label for="motMore">Qu’aimeriez-vous davantage exercer ou développer ?</label><textarea id="motMore"></textarea></div>
-        <div class="field"><label for="motLearned">Qu’est-ce que votre parcours vous a appris sur vos préférences professionnelles ?</label><textarea id="motLearned"></textarea></div>
-        <div class="field"><label for="motContrib">Qu’aimeriez-vous pouvoir davantage apporter ?</label><textarea id="motContrib"></textarea></div>
-      </div>
-      <div class="callout tip"><strong>Repère :</strong> une motivation devient convaincante lorsqu’elle aide votre interlocuteur à comprendre ce que vous recherchez dans les fonctions visées et pourquoi votre parcours vous y conduit.</div>
-    </section>
-
-    <section class="screen" data-screen="15" data-step="Adapter">
-      <div class="eyebrow">Adapter</div><h1>Regardez maintenant votre parcours du point de vue de l’entretien</h1>
-      <p class="lead">Jusqu’ici, vous avez travaillé sur vous. Il faut maintenant vérifier que votre argumentaire répond aussi à ce que votre interlocuteur cherche à comprendre.</p>
-      <div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Notez jusqu’à 3 attentes importantes de l’entretien ou des fonctions visées.</li><li>Pour chacune, indiquez ce que votre parcours permet déjà de démontrer.</li><li>Repérez les attentes pour lesquelles vous devrez préparer un exemple plus solide.</li></ol><p class="next"><strong>Si vous ne connaissez pas encore les attentes précises :</strong> formulez ce que vous pensez devoir montrer, puis vérifiez-le plus tard dans la documentation de l’entretien.</p></div>
-      <figure class="pedagogical-visual">
-        <img src="assets/04_adapter_a_entretien.svg" alt="Schéma montrant que le parcours personnel est filtré par les attentes, la durée et le support de l’entretien pour construire un argumentaire adapté." />
-        <figcaption>Vous ne changez pas votre parcours : vous choisissez les preuves les plus utiles au regard de la situation.</figcaption>
-      </figure>
-      <div id="contextReminder" class="callout info"></div>
-      <div class="expectation-row"><strong>Ce qui est attendu</strong><strong>Ce que je peux déjà prouver</strong><strong>Exemple ou point à préparer</strong></div>
-      <div id="expectationRows"></div>
-      <button class="btn secondary" id="addExpectation">＋ Ajouter une attente</button>
-    </section>
-
-    <section class="screen" data-screen="16" data-step="Préparer mon oral">
-      <div class="eyebrow">Argumenter</div><h1>Construisez l’ossature de votre présentation</h1>
-      <p class="lead">Vous n’allez pas écrire un texte à réciter. Vous allez préparer quelques repères qui vous permettront de parler avec structure et souplesse.</p>
-      <div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Préparez votre introduction en donnant une clé de lecture de votre parcours.</li><li>Décidez de l’ordre dans lequel vous mobiliserez vos expériences.</li><li>Préparez la manière dont vous relierez votre parcours à votre projet et à vos motivations.</li><li>Écrivez seulement vos idées-clés, pas un discours complet.</li></ol></div>
-      <figure class="pedagogical-visual portrait-infographic">
-        <img src="assets/infographies/05_structure_oral.webp" alt="Infographie proposant une structure adaptable pour l’oral : introduction, parcours et preuves, projet et motivations, conclusion, avec des repères différents pour des présentations de cinq, dix ou quinze minutes." />
-        <figcaption><strong>Repère pédagogique :</strong> cette structure est un cadre de préparation, pas un script. Adaptez-la toujours à la durée et aux règles de l’entretien préparé.</figcaption>
-      </figure>
-      <div class="field"><label for="oralIntro">Mon introduction : qui je suis aujourd’hui + fil conducteur</label><textarea id="oralIntro" placeholder="Ex. Aujourd’hui…, mon parcours s’est progressivement construit autour de…"></textarea></div>
-      <div class="field"><label for="oralStructure">Mes trois idées ou étapes principales</label><textarea id="oralStructure" placeholder="1. …\n2. …\n3. …"></textarea></div>
-      <div class="field"><label for="oralProjectLink">Comment je relie mon parcours à mon projet et à mes motivations</label><textarea id="oralProjectLink"></textarea></div>
-      <div class="field"><label for="oralConclusion">Ma conclusion : ce que je souhaite laisser comme idée finale</label><textarea id="oralConclusion"></textarea></div>
-      <div class="two-col"><div class="field"><label for="oralDuration">Durée d’entraînement</label><select id="oralDuration"><option value="180">3 minutes</option><option value="300">5 minutes</option><option value="600">10 minutes</option><option value="900">15 minutes</option></select></div><div class="callout info"><strong>Repère :</strong> si votre contexte comporte une durée imposée, elle est préchargée ici. Vous pourrez encore la modifier pour vous entraîner.</div></div>
-    </section>
-
-    <section class="screen" data-screen="17" data-step="Préparer mon oral">
-      <div class="eyebrow">Anticiper</div><h1>Préparez les questions cachées dans vos expériences</h1>
-      <p class="lead">Votre objectif n’est pas d’apprendre toutes les réponses possibles, mais de connaître suffisamment bien vos expériences pour pouvoir les analyser sous plusieurs angles.</p>
-      <div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Pour chacune de vos trois expériences prioritaires, imaginez une question qui pourrait vous mettre en difficulté.</li><li>Notez ensuite les faits dont vous auriez besoin pour y répondre.</li><li>Utilisez les familles de questions proposées comme aide.</li></ol><p class="next"><strong>Familles utiles :</strong> rôle précis, difficulté, décision, résultat, compétence, recul, environnement, projection, motivation.</p></div>
-      <figure class="pedagogical-visual portrait-infographic">
-        <img src="assets/infographies/06_boussole_questions.webp" alt="Boussole des grandes familles de questions possibles : parcours, compétences, situations vécues, recul, contribution, difficultés, projet et motivations." />
-        <figcaption>Utilisez ces familles comme des angles de préparation. Elles servent à mieux connaître vos expériences, pas à mémoriser une liste de réponses.</figcaption>
-      </figure>
-      <div id="questionBuilder" class="question-builder"></div>
-    </section>
-
-    <section class="screen" data-screen="18" data-step="M’entraîner">
-      <div class="eyebrow">Vérifier mes réflexes</div><h1>Défi méthodologique</h1>
-      <p class="lead">Avant la simulation, vérifiez que les principaux réflexes de préparation sont bien installés.</p>
-      <div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Répondez à 8 questions courtes.</li><li>Lisez le feedback après chaque réponse.</li><li>À la fin, repérez les principes à revoir si nécessaire.</li></ol><p class="next"><strong>Important :</strong> ce score mesure votre compréhension de la méthode, pas la qualité de votre parcours ni votre aptitude à réussir un entretien.</p></div>
-      <div id="methodQuiz" class="quiz-card"></div>
-    </section>
-
-    <section class="screen sim-shell" data-screen="19" data-step="M’entraîner">
-      <div id="preSim">
-        <div class="eyebrow">S’entraîner</div><h1>Derniers repères avant la simulation</h1><p class="lead">Vous allez maintenant mobiliser l’ensemble de votre préparation à voix haute, comme en entretien.</p>
-        <div class="activity-instruction">
-          <strong class="title">Ce que vous devez faire</strong>
-          <ol>
-            <li>Relisez une dernière fois vos expériences prioritaires et votre projet.</li>
-            <li>Choisissez la durée de votre présentation.</li>
-            <li>Quand vous êtes prêt, cliquez sur <strong>« Je suis prêt »</strong>.</li>
-          </ol>
-          <p class="next"><strong>Attention :</strong> dès que vous lancez la simulation, vos notes disparaissent et le chronomètre démarre. Parlez à voix haute ; ne cherchez pas à réciter un texte.</p>
-        </div>
-        <div class="cards" style="grid-template-columns:repeat(2,1fr)">
-          <div class="card personal"><h3>Mes expériences prioritaires</h3><div id="simExperiences" class="small"></div></div>
-          <div class="card personal"><h3>Mon projet</h3><div id="simProject" class="small"></div></div>
-        </div>
-        <div class="field" style="max-width:360px"><label for="duration">Durée de la présentation</label><select id="duration"><option value="180">3 minutes</option><option value="300">5 minutes</option><option value="600" selected>10 minutes</option><option value="900">15 minutes</option></select></div>
-        <button class="btn primary" id="startSim">Je suis prêt →</button>
-      </div>
-      <div id="timerSim" class="timer-view" style="display:none">
-        <div class="badge blue">Simulation en cours</div>
-        <div class="timer" id="timerText">10:00</div>
-        <h2>Présentez votre expérience et votre projet professionnel.</h2>
-        <p class="muted">Prenez le temps nécessaire pour être clair et convaincant.</p>
-        <div class="timer-note" id="timerNote">30 secondes — pensez à conclure</div>
-        <div class="timer-controls"><button class="btn ghost" id="stopSim">Arrêter l’entraînement</button></div>
-      </div>
-      <div id="postSim" style="display:none">
-        <div class="eyebrow">Débriefing</div><h1>Qu’avez-vous observé ?</h1><p class="lead">Repérez les points qui vous aideront le plus à progresser lors de votre prochaine simulation.</p>
-        <div class="activity-instruction">
-          <strong class="title">Ce que vous devez faire</strong>
-          <ol>
-            <li>Lisez les critères ci-dessous.</li>
-            <li>Cliquez sur <strong>2 critères maximum</strong> que vous souhaitez améliorer en priorité.</li>
-            <li>Relancez ensuite une simulation en vous concentrant sur ces deux points.</li>
-          </ol>
-        </div>
-        <div class="cards" id="debriefCards" style="grid-template-columns:repeat(2,1fr)"></div>
-        <div class="summary-card" id="debriefSummary" style="display:none"></div>
-        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-          <button class="btn primary" id="restartSim">Refaire une simulation</button>
-          <button class="btn secondary" id="downloadPdfFinal">Télécharger mon dossier en PDF</button>
-          <button class="btn ghost" id="goResources">Fiche réflexe, ressources et crédits →</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="screen" data-screen="20" data-step="Ressources">
-      <div class="eyebrow">Ressources</div>
-      <h1>Repartez avec vos outils de préparation</h1>
-      <p class="lead">Votre travail dans le module est terminé. Conservez maintenant les ressources qui vous seront utiles pour poursuivre vos entraînements.</p>
-      <div class="activity-instruction">
-        <strong class="title">Ce que vous pouvez faire maintenant</strong>
-        <ol>
-          <li>Télécharger votre <strong>dossier personnel</strong>, qui reprend tout ce que vous avez écrit.</li>
-          <li>Ouvrir ou télécharger la <strong>fiche réflexe</strong> en 2 pages pour vos prochains entraînements.</li>
-          <li>Consulter les <strong>crédits et références</strong> du module.</li>
-        </ol>
-        <p class="next"><strong>Conseil :</strong> votre dossier personnel est une base de travail. Ne l’apprenez pas mot pour mot ; utilisez-le pour retrouver vos faits, vos exemples et vos idées-clés.</p>
-      </div>
-      <div class="resource-grid">
-        <div class="resource-card primary-resource">
-          <div class="eyebrow">Mon travail</div>
-          <h2>Mon dossier personnel de préparation</h2>
-          <p>Il reprend les expériences, preuves, compétences, fil conducteur, projet, motivations, trame orale, questions et priorités que vous avez saisis.</p>
-          <div class="resource-actions"><button class="btn primary" id="downloadPdfResources">Télécharger mon dossier en PDF</button></div>
-        </div>
-        <div class="resource-card">
-          <div class="eyebrow">Méthode</div>
-          <h2>Ma fiche réflexe</h2>
-          <p>Deux pages pour retrouver rapidement la méthode : sélectionner, démontrer, relier, se projeter, adapter et s’entraîner.</p>
-          <div class="resource-actions">
-            <a class="btn secondary btn-link" href="docs/fiche_reflexe_experience_projet.pdf" target="_blank" rel="noopener">Ouvrir la fiche réflexe</a>
-            <a class="btn ghost btn-link" href="docs/fiche_reflexe_experience_projet.pdf" download>Télécharger le PDF</a>
-          </div>
-        </div>
-      </div>
-      <div class="divider"></div>
-      <div class="eyebrow">Crédits et références</div>
-      <div class="credit-list">
-        <div class="credit-block"><h2>Conception et réalisation</h2><p><strong>Institut de formation à l’administration publique (IFAP) de Nouvelle-Calédonie.</strong></p><p>Conception pédagogique, scénarisation, design d’expérience et réalisation du module.</p></div>
-        <div class="credit-block"><h2>Références de contextualisation</h2><p>Les contextualisations relatives aux concours, examens professionnels, sélections professionnelles et autres dispositifs s’appuient sur les programmes, méthodologies et documents publiés par la direction des ressources humaines et de la fonction publique de Nouvelle-Calédonie (DRHFPNC), ainsi que sur le référentiel interne IFAP des épreuves.</p></div>
-        <div class="credit-block advice"><h2>À savoir</h2><p>Les conseils proposés dans ce module constituent des repères méthodologiques de préparation. Lorsqu’une règle particulière est fixée par le texte, le programme ou la méthodologie de l’entretien préparé, cette règle prévaut. Les informations propres à une épreuve doivent être vérifiées dans les références officielles en vigueur.</p></div>
-        <div class="credit-block"><h2>Données personnelles de préparation</h2><p>Les expériences, analyses, projets, motivations et autres contenus détaillés saisis dans le carnet sont conservés localement dans le navigateur dans cette version du module. Ils ne sont pas transmis au jury.</p></div>
-        <div class="credit-block"><h2>Illustrations et ressources graphiques</h2><p>Illustrations pédagogiques et interface conçues pour l’IFAP. Les schémas sont utilisés comme supports d’apprentissage et non comme éléments décoratifs.</p></div>
-        <div class="credit-block"><h2>Version</h2><p>Module « Valoriser son expérience et présenter son projet professionnel » - version de conception, septembre 2026.</p><p class="small muted">Référentiel interne de conception : « Tableau exhaustif des épreuves - Fonction publique de Nouvelle-Calédonie - IFAP Simulation JuryNC - version 6 - 2025 ». Les données propres aux épreuves sont à confronter aux publications officielles en vigueur avant diffusion.</p></div>
-      </div>
-    </section>
-  </main>
-  <footer><button class="btn ghost" id="prevBtn">← Précédent</button><button class="btn primary" id="nextBtn">Continuer →</button></footer>
+<aside>
+<div class="logo">◉ <span>Expérience &amp;<br/>projet professionnel</span></div>
+<div class="nav-discovery-note">Vous pouvez explorer librement les rubriques. Utilisez « Continuer » pour suivre le parcours guidé.</div>
+<nav class="nav" id="sideNav"></nav>
+</aside>
+<header>
+<button class="icon-btn mobile-menu" id="mobileMenu">☰ <span>Sommaire</span></button>
+<div class="brand">Expérience &amp; projet professionnel</div>
+<div class="progress-wrap"><span class="progress-txt" id="progressTxt">0 %</span><div class="progress"><span id="progressBar"></span></div></div>
+<div class="head-actions">
+<button id="openNotebook">▣ <span>Mon carnet</span></button>
+<a class="reflex" href="docs/fiche_reflexe_experience_projet.pdf" rel="noopener" target="_blank" title="Ouvrir la fiche réflexe PDF">▤ <span>Fiche réflexe</span></a>
+<button id="fullscreenBtn">⛶ <span>Plein écran</span></button>
 </div>
-
+</header>
+<main>
+<section class="screen active" data-screen="0" data-step="Comprendre les enjeux"><div class="welcome-hero">
+<div>
+<div class="welcome-kicker">Bienvenue</div>
+<h1>Valoriser son expérience et présenter son projet professionnel</h1>
+<p class="lead">Prenez du recul sur votre parcours pour pouvoir en parler avec clarté, preuves et cohérence lors d’un entretien.</p>
+<div aria-label="Repères sur la formation" class="welcome-meta">
+<div class="meta-card"><strong>Votre objectif</strong><span>Construire un argumentaire personnel et adaptable à l’entretien que vous préparez.</span></div>
+<div class="meta-card"><strong>Durée indicative</strong><span>Environ 1 h 30 à 2 h. Vous pouvez avancer en plusieurs fois : votre travail est conservé sur cet appareil.</span></div>
+<div class="meta-card"><strong>Vous repartez avec</strong><span>3 expériences analysées, une trame d’oral, un dossier PDF personnel, une fiche réflexe et deux simulations.</span></div>
+</div>
+<div class="activity-instruction">
+<strong class="title">La démarche</strong>
+<p style="margin:0">Vous allez <strong>comprendre</strong> les enjeux, <strong>sélectionner</strong> vos expériences, <strong>démontrer</strong> vos compétences, <strong>relier</strong> votre parcours à votre projet, puis <strong>vous entraîner à voix haute</strong>.</p>
+<p class="next"><strong>Le principe :</strong> vous ne préparez pas un texte à réciter. Vous construisez des repères suffisamment solides pour pouvoir parler avec souplesse.</p>
+</div>
+<div class="welcome-actions"><button class="btn primary" id="startCourse">Commencer la formation →</button></div>
+</div>
+<figure class="welcome-visual"><img alt="Carte visuelle du parcours de préparation : comprendre, sélectionner, démontrer, relier, se situer, se projeter, adapter et s’entraîner." src="assets/infographies/01_parcours_preparation.webp"/></figure>
+</div>
+</section>
+<section class="screen" data-screen="1" data-step="Comprendre les enjeux">
+<div class="eyebrow">Comprendre les enjeux</div>
+<h1>Ce que votre interlocuteur cherche à comprendre</h1>
+<p class="lead">Les questions peuvent être formulées de nombreuses façons. Mais derrière elles, votre interlocuteur cherche souvent à éclairer cinq dimensions.</p>
+<div class="activity-instruction">
+<strong class="title">Ce que vous devez faire</strong>
+<p style="margin:0">Parcourez les 5 questions ci-dessous. Pour chacune, demandez-vous simplement : <strong>« Est-ce que je saurais y répondre aujourd’hui avec un exemple précis ? »</strong></p>
+<p class="next"><strong>Il n’y a rien à saisir.</strong> L’objectif est de comprendre ce que votre présentation devra progressivement rendre visible.</p>
+</div>
+<figure class="pedagogical-visual portrait-infographic wide">
+<img alt="Infographie comparant ce que le candidat peut raconter spontanément et ce que l’interlocuteur cherche réellement à comprendre : compétences, recul, progression, motivations, environnement professionnel et capacité à se projeter." src="assets/infographies/03_ce_que_interlocuteur_cherche.webp"/>
+<figcaption>Parler de son parcours ne consiste pas seulement à citer des postes ou des missions : l’enjeu est de rendre visibles ce qu’ils révèlent de vous professionnellement.</figcaption>
+</figure>
+<div class="cards question-grid">
+<div class="card"><span class="badge">1</span><h2>Qui êtes-vous professionnellement aujourd’hui ?</h2><p class="muted">Au-delà de votre intitulé de poste, quelles compétences et quels rôles vous caractérisent ?</p></div>
+<div class="card"><span class="badge">2</span><h2>Qu’avez-vous réellement appris de vos expériences ?</h2><p class="muted">Qu’est-ce qui a évolué dans votre manière de travailler ?</p></div>
+<div class="card"><span class="badge">3</span><h2>Que savez-vous faire et comment pouvez-vous le démontrer ?</h2><p class="muted">Quelles situations concrètes permettent de constater vos compétences ?</p></div>
+<div class="card"><span class="badge">4</span><h2>Pourquoi souhaitez-vous évoluer, changer ou progresser ?</h2><p class="muted">Qu’est-ce qui vous attire réellement dans la suite envisagée ?</p></div>
+<div class="card"><span class="badge">5</span><h2>Pourquoi votre projet est-il cohérent avec votre parcours ?</h2><p class="muted">Quels acquis rendent votre projet crédible et compréhensible ?</p></div>
+</div>
+<div class="callout info"><strong>Important :</strong> vous ne serez pas forcément interrogé exactement avec ces mots. Ces cinq questions donnent une grille de lecture des enjeux de nombreux entretiens professionnels.</div>
+</section>
+<section class="screen" data-screen="2" data-step="Comprendre les enjeux">
+<div class="eyebrow">Comprendre les enjeux</div>
+<h1>Le piège : confondre parcours et chronologie</h1>
+<p class="lead">Deux personnes répondent à la même question : <strong>« Pouvez-vous nous présenter votre parcours ? »</strong></p>
+<div class="activity-instruction">
+<strong class="title">Ce que vous devez faire</strong>
+<ol>
+<li>Lisez les deux réponses.</li>
+<li>Choisissez celle qui aide le mieux à comprendre <strong>l’évolution professionnelle</strong> de la personne.</li>
+<li>Lisez le feedback avant de continuer.</li>
+</ol>
+<p class="next"><strong>Pourquoi cette activité ?</strong> Pour distinguer une succession de faits d’une présentation qui donne une lecture du parcours.</p>
+</div>
+<div class="contrast-grid" id="chronologyQuiz">
+<label class="card contrast-card"><input name="chronology" type="radio" value="a"/><div><span class="badge blue">Réponse A</span><p>« J’ai commencé en 2012 comme gestionnaire. En 2016, j’ai rejoint un autre service. En 2020, je suis devenue chargée de projet, puis en 2024 responsable d’unité. »</p></div></label>
+<label class="card contrast-card"><input name="chronology" type="radio" value="b"/><div><span class="badge">Réponse B</span><p>« Mon parcours m’a progressivement conduite de fonctions de gestion vers des fonctions d’analyse puis de coordination. Trois expériences ont particulièrement structuré cette évolution et expliquent aujourd’hui mon projet. »</p></div></label>
+</div>
+<div class="callout tip" id="chronologyFeedback" style="display:none"></div>
+</section>
+<section class="screen" data-screen="3" data-step="Comprendre les enjeux">
+<div class="eyebrow">Comprendre les enjeux</div>
+<h1>Ce qui fragilise souvent une présentation</h1>
+<p class="lead">Une présentation peut être exacte et sincère, tout en restant peu convaincante. Voici quatre pièges fréquents à éviter.</p>
+<div class="activity-instruction">
+<strong class="title">Ce que vous devez faire</strong>
+<p style="margin:0">Lisez les quatre pièges. Repérez mentalement celui dans lequel vous pourriez le plus facilement tomber aujourd’hui.</p>
+<p class="next"><strong>Vous n’avez rien à déclarer.</strong> Ces repères vont simplement vous aider à comprendre pourquoi la méthode du module est construite comme elle l’est.</p>
+</div>
+<div class="cards risk-grid">
+<div class="card"><div class="risk-icon">1</div><h2>Tout raconter</h2><p>À vouloir être exhaustif, vous utilisez le temps disponible sans vraiment mettre en valeur ce qui compte.</p><div class="small muted"><strong>Le besoin :</strong> sélectionner.</div></div>
+<div class="card"><div class="risk-icon">2</div><h2>Affirmer sans démontrer</h2><p>« Je suis autonome », « je sais manager », « je travaille en transversalité » restent des affirmations sans situation concrète.</p><div class="small muted"><strong>Le besoin :</strong> apporter des preuves.</div></div>
+<div class="card"><div class="risk-icon">3</div><h2>Présenter un projet déconnecté</h2><p>Un projet est plus crédible lorsque l’on comprend ce qui, dans le parcours, conduit à cette évolution.</p><div class="small muted"><strong>Le besoin :</strong> relier.</div></div>
+<div class="card"><div class="risk-icon">4</div><h2>Apprendre un texte</h2><p>Une présentation récitée peut se fragiliser dès que l’entretien sort du scénario préparé.</p><div class="small muted"><strong>Le besoin :</strong> comprendre son parcours suffisamment bien pour en parler avec souplesse.</div></div>
+</div>
+<div class="callout tip"><strong>La préparation ne consiste pas à écrire un discours parfait.</strong> Elle consiste à suffisamment analyser son parcours pour pouvoir en parler avec précision, recul et souplesse.</div>
+</section>
+<section class="screen" data-screen="4" data-step="Comprendre les enjeux">
+<div class="hero">
+<div class="eyebrow">Passer à la démarche</div>
+<h1>Vous savez maintenant ce que vous allez chercher à construire</h1>
+<p class="lead">La suite du module va vous aider à passer d’un ensemble d’expériences à un <strong>argumentaire professionnel personnel, cohérent et adaptable</strong>.</p>
+<div class="activity-instruction" style="text-align:left;max-width:900px;margin:20px auto 28px">
+<strong class="title">La démarche en 8 repères</strong>
+<p style="margin:0">Vous allez travailler sur votre propre parcours. Chaque étape prépare la suivante ; vous n’avez pas à produire un discours complet dès le départ.</p>
+</div>
+<figure class="pedagogical-visual portrait-infographic wide">
+<img alt="Carte du parcours de préparation en huit repères : comprendre les enjeux, sélectionner ses expériences, démontrer par des preuves, relier son parcours, se situer professionnellement, se projeter, adapter à l’entretien et s’entraîner pour progresser." src="assets/infographies/01_parcours_preparation.webp"/>
+<figcaption>Cette carte donne le cap. Vous n’avez pas à tout construire d’un seul coup : chaque étape prépare la suivante.</figcaption>
+</figure>
+<div class="callout info" style="max-width:820px;margin:0 auto 24px;text-align:left"><strong>Vous allez commencer par sélectionner vos propres expériences.</strong> Rien n’est prérempli : le matériau de la formation sera votre parcours.</div>
+<button class="btn primary" data-next="">Commencer à travailler sur mon parcours →</button>
+</div>
+</section>
+<section class="screen" data-screen="5" data-step="Préparer">
+<div class="eyebrow">Préparer</div><h1>Configurez l’entretien que vous préparez</h1>
+<p class="lead">Votre méthode restera la même, mais votre présentation doit tenir compte du contexte, du support éventuel et du temps disponible.</p>
+<div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Choisissez le contexte qui ressemble le plus à votre situation.</li><li>Indiquez le document éventuel sur lequel l’entretien s’appuie.</li><li>Indiquez la durée de présentation si vous la connaissez.</li></ol><p class="next"><strong>Pourquoi ?</strong> Ces informations permettront au module d’adapter les conseils de préparation et le chronomètre final.</p></div>
+<h2>1. Dans quel contexte allez-vous parler de votre expérience et de votre projet ?</h2>
+<div class="context-grid" id="contextType">
+<label class="option-card"><input name="ctx" type="radio" value="exam"/><div><strong>Concours ou examen professionnel</strong><div class="small muted">Une épreuve ou un entretien lié à une évolution statutaire.</div></div></label>
+<label class="option-card"><input name="ctx" type="radio" value="selection"/><div><strong>Sélection ou intégration</strong><div class="small muted">Une sélection fondée sur le parcours, les compétences et les motivations.</div></div></label>
+<label class="option-card"><input name="ctx" type="radio" value="mobility"/><div><strong>Mobilité ou recrutement</strong><div class="small muted">Un poste ou des fonctions que vous souhaitez rejoindre.</div></div></label>
+<label class="option-card"><input name="ctx" type="radio" value="promotion"/><div><strong>Évolution ou promotion professionnelle</strong><div class="small muted">Une évolution de responsabilités, d’expertise ou de fonctions.</div></div></label>
+<label class="option-card"><input name="ctx" type="radio" value="other"/><div><strong>Autre entretien</strong><div class="small muted">Toute situation où vous devez parler de votre parcours et de votre projet.</div></div></label>
+</div>
+<div class="divider"></div>
+<div class="two-col">
+<div class="field"><label for="sourceDocument">2. Sur quoi l’entretien s’appuiera-t-il ?</label><div class="help">Choisissez ce que votre interlocuteur aura éventuellement sous les yeux.</div><select id="sourceDocument"><option value="">Choisir…</option><option value="cv">Un CV</option><option value="professional_file">Un dossier professionnel</option><option value="information_sheet">Une fiche individuelle de renseignements</option><option value="experience_file">Un dossier présentant une ou plusieurs expériences</option><option value="other">Un autre document</option><option value="none">Aucun document particulier</option><option value="unknown">Je ne sais pas encore</option></select></div>
+<div class="field"><label for="contextDuration">3. Combien de temps avez-vous pour vous présenter ?</label><div class="help">Si vous ne le savez pas, laissez le champ vide : vous pourrez le définir plus tard.</div><input id="contextDuration" max="30" min="1" placeholder="Ex. 10" type="number"/></div>
+</div>
+<div class="callout info" id="contextSummary" style="display:none"></div>
+</section>
+<section class="screen" data-screen="6" data-step="Préparer">
+<div class="eyebrow">Préparer</div><h1>Avant de commencer, où en êtes-vous ?</h1>
+<p class="lead">Ce rapide auto-positionnement ne mesure pas votre niveau professionnel. Il vous aide à repérer les points sur lesquels vous aurez le plus besoin de travailler.</p>
+<div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><p>Pour chacune des 5 affirmations, choisissez la réponse qui vous correspond aujourd’hui. Répondez spontanément : il n’y a ni note ni bonne réponse.</p><p class="next"><strong>Quand vous aurez terminé :</strong> vous verrez les dimensions que le module va vous aider à consolider.</p></div>
+<div class="question-builder" id="diagnosticList"></div>
+<button class="btn primary" id="saveDiagnostic">Voir mes points de vigilance</button>
+<div class="summary-card" id="diagnosticSummary" style="display:none;margin-top:18px"></div>
+</section>
+<section class="screen" data-screen="7" data-step="Sélectionner">
+<div class="section-top">
+<div><div class="eyebrow">Sélectionner</div><h1>Passez votre parcours au scanner</h1><p class="lead">Construisez d’abord votre propre liste d’expériences, puis choisissez celles qui seront les plus utiles pour votre entretien.</p></div>
+<div class="count" id="scannerCount">0 expérience saisie / 3 minimum</div>
+</div>
+<div class="activity-instruction">
+<strong class="title">Ce que vous devez faire</strong>
+<ol>
+<li>Ajoutez <strong>au moins 3 expériences qui vous appartiennent</strong>.</li>
+<li>Pour chacune, indiquez brièvement ce que vous avez réellement fait et ce qu’elle peut montrer.</li>
+<li>Quand votre liste est prête, classez <strong>exactement 3 expériences</strong> dans « À développer dans ma présentation ».</li>
+</ol>
+<p class="next"><strong>Quand vous aurez terminé :</strong> le bouton « Continuer » s’activera et vous apprendrez à transformer ces expériences en preuves.</p>
+</div>
+<figure class="pedagogical-visual portrait-infographic">
+<img alt="Entonnoir montrant comment passer de nombreuses expériences à trois expériences prioritaires en retenant celles qui sont pertinentes pour l’entretien, riches en preuves, utiles pour montrer la progression et liées au projet." src="assets/infographies/02_selection_experiences.webp"/>
+<figcaption>Le but n’est pas d’être exhaustif : privilégiez la qualité de l’analyse et la pertinence des expériences retenues.</figcaption>
+</figure>
+<div aria-label="Les trois étapes de l’activité" class="scanner-guide">
+<div class="guide-step"><div class="guide-num">1</div><h3>Ajoutez vos expériences</h3><p class="small">Saisissez au moins <strong>3 expériences qui vous correspondent</strong> : poste, mission, projet, responsabilité particulière ou situation marquante.</p></div>
+<div class="guide-step"><div class="guide-num">2</div><h3>Décrivez l’essentiel</h3><p class="small">Pour chacune, notez ce que vous avez <strong>réellement fait</strong> et ce qu’elle pourrait permettre de montrer. Inutile de recopier votre CV.</p></div>
+<div class="guide-step"><div class="guide-num">3</div><h3>Choisissez vos 3 priorités</h3><p class="small">Lorsque vous aurez au moins 3 expériences, sélectionnez les <strong>3 plus représentatives et utiles</strong> pour votre entretien.</p></div>
+</div>
+<div id="scannerPhaseNote"></div>
+<div class="cards" id="experienceCards"></div>
+<div class="empty-state" id="scannerEmpty">
+<h2>Votre parcours commence ici</h2>
+<p>Ajoutez une première expérience de votre parcours professionnel. Si vous hésitez, pensez par exemple à :</p>
+<p class="small muted">un poste qui vous a fait progresser · un projet dont vous êtes fier · une situation où vous avez pris des responsabilités · une mission qui montre une expertise · une expérience qui explique votre projet actuel</p>
+<button class="btn primary" id="addFirstExperience">＋ Ajouter ma première expérience</button>
+</div>
+<div class="add-box" id="addExperienceBox" style="display:none"><button class="btn secondary" id="addExperience">＋ Ajouter une autre expérience</button><p class="small muted" style="margin:8px 0 0">Vous pouvez en saisir jusqu’à 6 avant de choisir vos 3 priorités.</p></div>
+<div class="callout info"><strong>Question repère :</strong> pour chaque expérience, demandez-vous : « qu’est-ce qu’elle permettra à mon interlocuteur de comprendre de moi professionnellement ? »</div>
+</section>
+<section class="screen" data-screen="8" data-step="Démontrer">
+<div class="eyebrow">Démontrer</div>
+<h1>Transformer une expérience en preuve</h1>
+<p class="lead">Vous avez choisi des expériences importantes. Il faut maintenant apprendre à expliquer <strong>ce qu’elles prouvent réellement</strong>.</p>
+<div class="activity-instruction">
+<strong class="title">Ce que vous devez faire</strong>
+<ol>
+<li>Lisez les 5 questions de la chaîne de la preuve.</li>
+<li>Observez l’exemple.</li>
+<li>Répondez au micro-défi en bas de l’écran.</li>
+</ol>
+<p class="next"><strong>Vous n’avez rien à rédiger ici.</strong> Quand le micro-défi est terminé, « Continuer » s’active et vous appliquez la méthode à votre propre expérience.</p>
+</div>
+<h2 style="margin-top:28px">1. Comprenez la chaîne de la preuve</h2>
+<p class="muted" style="max-width:820px">Pour qu’une expérience soit convaincante, votre interlocuteur doit pouvoir comprendre le contexte, votre contribution personnelle, ce qu’elle a produit, la compétence qu’elle révèle et ce que vous en avez appris.</p>
+<figure class="pedagogical-visual">
+<img alt="Schéma en cinq étapes : situation, action, résultat, compétence et recul. Il montre comment transformer une expérience vécue en preuve de compétence." src="assets/02_chaine_de_la_preuve.svg"/>
+<figcaption>Utilisez cette chaîne pour analyser vos expériences avant l’oral ; elle n’a pas vocation à être récitée.</figcaption>
+</figure>
+<div class="card" style="max-width:900px;margin:20px 0;background:var(--green-soft);border-color:#cee0d4">
+<div class="eyebrow">Exemple</div>
+<p style="margin:0"><strong>Au lieu de :</strong> « Je sais travailler en transversalité. »</p>
+<p style="margin:10px 0 0"><strong>Une preuve commence plutôt par :</strong> « Pour harmoniser une procédure utilisée différemment par trois services, j’ai réuni les acteurs concernés, fait expliciter leurs contraintes et construit avec eux un circuit commun. »</p>
+<p class="small muted" style="margin:10px 0 0">L’interlocuteur peut alors constater la transversalité à partir d’une situation réelle, au lieu de devoir croire une simple affirmation.</p>
+</div>
+<div class="card" style="max-width:760px;margin-top:26px">
+<div class="eyebrow">2. Vérifiez votre réflexe</div>
+<h2>Micro-défi</h2>
+<p>Vous dites : <strong>« Je sais travailler en transversalité. »</strong></p>
+<p><strong>Quelle question devez-vous maintenant vous poser pour transformer cette affirmation en preuve ?</strong></p>
+<div class="choice-list" id="proofQuiz">
+<label class="choice"><input name="pq" type="radio" value="a"/> Depuis combien de temps ?</label>
+<label class="choice"><input name="pq" type="radio" value="b"/> Qui peut confirmer cette compétence ?</label>
+<label class="choice"><input name="pq" type="radio" value="c"/> Qu’ai-je réellement fait qui permet de le constater ?</label>
+<label class="choice"><input name="pq" type="radio" value="d"/> Est-ce écrit dans ma fiche de poste ?</label>
+</div>
+<div class="callout tip" id="proofFeedback" style="display:none"></div>
+<p class="small muted" id="proofNextHint" style="display:none;margin:12px 0 0">Une fois votre réponse lue, cliquez sur <strong>Continuer</strong> : vous utiliserez cette méthode sur votre propre expérience.</p>
+</div>
+</section>
+<section class="screen" data-screen="9" data-step="Démontrer">
+<div class="eyebrow">Démontrer</div><h1>Mon laboratoire d’expérience</h1>
+<p class="lead">Travaillez vos trois expériences prioritaires. L’aide diminue progressivement pour vous rendre autonome dans l’analyse.</p>
+<div class="activity-instruction">
+<strong class="title">Ce que vous devez faire</strong>
+<ol><li>Analysez vos <strong>3 expériences prioritaires</strong> avec la même chaîne : situation, action, résultat, compétence, recul.</li><li><strong>Expérience 1 :</strong> vous êtes fortement guidé avec conseils et exemple.</li><li><strong>Expérience 2 :</strong> le conseil reste disponible mais l’exemple disparaît.</li><li><strong>Expérience 3 :</strong> vous réalisez l’analyse en autonomie.</li></ol>
+<p class="next"><strong>À la fin :</strong> les trois fiches alimentent votre carnet et votre dossier PDF.</p></div>
+<div aria-label="Choisir une expérience prioritaire" class="exp-tabs" id="labExpTabs"></div><div class="section-top" id="labTitle"><div><h2>Expérience prioritaire</h2><span class="badge">EXPÉRIENCE PRIORITAIRE</span></div></div>
+<div class="lab-wrap">
+<div class="lab-nav" id="labNav"></div>
+<div class="card">
+<div id="labStages"></div>
+<div style="display:flex;justify-content:space-between;gap:10px;margin-top:18px"><button class="btn ghost" id="labBack">← Étape précédente</button><button class="btn primary" id="labNext">Étape suivante →</button></div>
+</div>
+<div class="lab-side">
+<div class="card" id="labAdviceCard" style="background:var(--blue-soft)"><div class="eyebrow" style="color:var(--blue)">Mon conseil</div><p id="labAdvice">Soyez précis sur vos choix et votre rôle.</p></div>
+<div class="card" id="labExampleCard"><div class="eyebrow">Exemple</div><p id="labExample">J’ai coordonné les échanges, proposé un calendrier et préparé les arbitrages nécessaires.</p></div>
+<div class="card" id="labAutonomyCard" style="display:none;background:var(--coral-soft);border-color:#F0C7BE"><div class="eyebrow" style="color:#B34F3D">À vous de jouer</div><p>Vous connaissez maintenant la méthode. Analysez cette troisième expérience sans exemple : cherchez vos propres mots et vos propres faits.</p></div></div>
+</div>
+<div class="summary-card" id="labSummary" style="display:none"></div><div class="micro-practice" data-micro="experience" data-seconds="60">
+<div><div class="micro-label">Passer de l’écrit à la parole · 60 s</div><h2>Présentez une de vos expériences sans lire</h2><p>Choisissez une expérience et racontez-la à voix haute en faisant apparaître la situation, votre action, le résultat, la compétence et le recul. Le module n’enregistre pas votre voix.</p></div>
+<div class="micro-actions"><span class="micro-time">01:00</span><button class="btn secondary" data-micro-start="">Lancer 60 s</button><span class="micro-done" data-micro-done=""></span></div></div>
+</section>
+<section class="screen" data-screen="10" data-step="Comprendre mon parcours">
+<div class="eyebrow">Relier</div><h1>Repérez votre progression professionnelle</h1>
+<p class="lead">Progresser ne signifie pas seulement changer de poste ou de grade. Une progression peut concerner l’expertise, l’autonomie, la complexité, les responsabilités ou encore la capacité à travailler avec d’autres acteurs.</p>
+<div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Sélectionnez les dimensions qui ont réellement évolué dans votre parcours.</li><li>Choisissez ensuite les 3 dimensions que vous souhaitez faire apparaître en priorité dans votre entretien.</li><li>Écrivez en quelques lignes ce qui vous fait dire que vous avez progressé sur ces dimensions.</li></ol><p class="next"><strong>Le but :</strong> passer d’une succession d’expériences à une lecture de votre évolution professionnelle.</p></div>
+<div class="chip-wrap" id="progressionChips"></div>
+<div class="field"><label for="progressionSummary">Comment décririez-vous votre progression ?</label><div class="help">Appuyez-vous sur des faits : davantage d’autonomie, des situations plus complexes, un rôle plus transversal, une expertise devenue reconnue…</div><textarea id="progressionSummary" placeholder="Avec le temps, j’ai progressivement…"></textarea></div>
+<div class="screen-summary" id="progressionPreview" style="display:none"></div>
+</section>
+<section class="screen" data-screen="11" data-step="Comprendre mon parcours">
+<div class="eyebrow">Relier</div><h1>Trouvez le fil conducteur de votre parcours</h1>
+<p class="lead">Votre parcours n’a pas besoin d’avoir été planifié pour être cohérent. Le fil conducteur consiste à identifier, avec recul, ce qui relie réellement plusieurs étapes.</p>
+<div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Repérez ce qui revient dans plusieurs expériences : un type de contribution, une compétence, un domaine, une façon d’agir ou des responsabilités croissantes.</li><li>Complétez les trois amorces ci-dessous.</li><li>Terminez par une phrase courte qui résume votre fil conducteur.</li></ol><p class="next"><strong>À éviter :</strong> réécrire votre passé comme si tout avait été prévu depuis le début.</p></div>
+<div class="field"><label for="threadObserve">Lorsque je regarde mon parcours dans son ensemble, je constate que…</label><textarea id="threadObserve"></textarea></div>
+<div class="field"><label for="threadCommon">Plusieurs de mes expériences ont en commun…</label><textarea id="threadCommon"></textarea></div>
+<div class="field"><label for="threadEvolution">Progressivement, j’ai développé…</label><textarea id="threadEvolution"></textarea></div>
+<div class="field"><label for="threadSummary">Mon fil conducteur en une phrase</label><input id="threadSummary" placeholder="Ex. Mon parcours m’a progressivement conduit vers des fonctions de coordination et d’accompagnement du changement."/></div>
+</section>
+<section class="screen" data-screen="12" data-step="Comprendre mon parcours">
+<div class="eyebrow">Se situer</div><h1>Qui êtes-vous professionnellement aujourd’hui ?</h1>
+<p class="lead">Avant de parler de votre futur, prenez un arrêt sur image. L’entretien doit permettre de comprendre le professionnel que vos expériences ont construit aujourd’hui.</p>
+<div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Répondez aux trois questions à partir de situations réellement observées dans votre travail.</li><li>Évitez les qualités générales comme « motivé » ou « sérieux » : cherchez ce que l’on peut constater dans votre activité.</li><li>Terminez par une phrase de synthèse.</li></ol><p class="next"><strong>Cette synthèse vous servira ensuite à construire votre introduction.</strong></p></div>
+<figure class="pedagogical-visual portrait-infographic">
+<img alt="Infographie reliant hier, aujourd’hui et demain : les expériences passées construisent l’identité professionnelle actuelle, qui éclaire ensuite le projet professionnel futur." src="assets/infographies/04_passe_au_projet.webp"/>
+<figcaption>Le fil conducteur relie vos expériences passées, ce qu’elles ont construit chez vous et la direction dans laquelle vous souhaitez évoluer.</figcaption>
+</figure>
+<div class="identity-box production-zone">
+<div class="field"><label for="identityEase">Dans quelles situations êtes-vous aujourd’hui particulièrement à l’aise ?</label><textarea id="identityEase"></textarea></div>
+<div class="field"><label for="identityAsked">Pour quoi vient-on vous solliciter ?</label><textarea id="identityAsked"></textarea></div>
+<div class="field"><label for="identityContribution">Qu’est-ce que votre parcours vous permet aujourd’hui d’apporter ?</label><textarea id="identityContribution"></textarea></div>
+<div class="field"><label for="identitySummary">Si vous deviez vous présenter professionnellement en une phrase</label><input id="identitySummary" placeholder="Aujourd’hui, je suis un professionnel qui…"/></div>
+</div><div class="micro-practice" data-micro="identity" data-seconds="30"><div><div class="micro-label">À voix haute · 30 s</div><h2>Qui êtes-vous professionnellement aujourd’hui ?</h2><p>Sans lire votre synthèse, présentez en une ou deux idées ce que vos expériences ont construit chez vous.</p></div><div class="micro-actions"><span class="micro-time">00:30</span><button class="btn secondary" data-micro-start="">Lancer 30 s</button><span class="micro-done" data-micro-done=""></span></div></div>
+</section>
+<section class="screen" data-screen="13" data-step="Construire mon projet">
+<div class="eyebrow">Se projeter</div><h1>Construisez votre projet professionnel</h1><p class="lead">Un projet solide relie ce que vous souhaitez, ce qui vous motive et ce que votre parcours rend crédible.</p>
+<div class="activity-instruction">
+<strong class="title">Ce que vous devez faire</strong>
+<ol>
+<li>Cliquez sur <strong>« Compléter »</strong> dans chacun des 4 blocs.</li>
+<li>Répondez avec vos propres mots ; quelques phrases suffisent.</li>
+<li>Quand les 4 blocs sont remplis, cliquez sur <strong>« Vérifier mon projet »</strong>.</li>
+</ol>
+<p class="next"><strong>Le but :</strong> vérifier que votre projet est précis, cohérent avec votre parcours, motivé et orienté vers une contribution. Il n’y a pas de « bonne réponse » attendue.</p>
+</div>
+<figure class="pedagogical-visual">
+<img alt="Chaîne reliant expériences, compétences, identité professionnelle, projet et contribution afin de montrer la cohérence entre le parcours passé et la projection professionnelle." src="assets/03_coherence_parcours_projet.svg"/>
+<figcaption>Le projet est plus convaincant lorsqu’il apparaît comme une suite compréhensible de ce que le parcours a construit.</figcaption>
+</figure>
+<div class="project-grid">
+<div>
+<div class="project-step"><div class="n">1</div><div><strong>Je souhaite…</strong><div class="small muted">Qu’aimeriez-vous davantage exercer ou développer ?</div></div><button class="btn ghost proj-edit" data-proj="wish">Compléter</button></div>
+<div class="project-step"><div class="n" style="color:#d58b00">2</div><div><strong>Parce que…</strong><div class="small muted">Pourquoi cette évolution vous attire-t-elle ?</div></div><button class="btn ghost proj-edit" data-proj="why">Compléter</button></div>
+<div class="project-step"><div class="n" style="color:#3565a8">3</div><div><strong>Mon parcours m’y prépare…</strong><div class="small muted">Quelles expériences ou compétences rendent ce projet crédible ?</div></div><button class="btn ghost proj-edit" data-proj="prep">Compléter</button></div>
+<div class="project-step"><div class="n" style="color:#6551a4">4</div><div><strong>Je souhaite apporter…</strong><div class="small muted">Quelle contribution souhaitez-vous développer ?</div></div><button class="btn ghost proj-edit" data-proj="contrib">Compléter</button></div>
+</div>
+<div>
+<div class="card" style="background:#fffaf0"><div class="eyebrow" style="color:#826600">À retenir</div><p>Un projet professionnel cohérent vous permet de convaincre par votre constance et votre clarté.</p></div>
+<button class="btn secondary" id="testProject" style="width:100%;margin-top:12px">Vérifier mon projet →</button>
+</div>
+</div>
+<div class="summary-card" id="projectSummary" style="display:none"></div>
+</section>
+<section class="screen" data-screen="14" data-step="Construire mon projet">
+<div class="eyebrow">Se projeter</div><h1>Expliquez vos motivations</h1>
+<p class="lead">Votre projet indique où vous souhaitez aller. Vos motivations permettent de comprendre pourquoi cette évolution a du sens pour vous.</p>
+<div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Répondez aux quatre questions avec des idées concrètes.</li><li>Reliez vos motivations au contenu des fonctions ou de l’évolution recherchée.</li><li>Ne cherchez pas à masquer les motivations personnelles : approfondissez-les pour en faire un argument professionnel.</li></ol><p class="next"><strong>Le but :</strong> dépasser une motivation limitée à « réussir l’examen », « changer de grade » ou « changer de poste ».</p></div>
+<div class="two-col production-zone">
+<div class="field"><label for="motAttract">Qu’est-ce qui vous attire dans cette évolution ?</label><textarea id="motAttract"></textarea></div>
+<div class="field"><label for="motMore">Qu’aimeriez-vous davantage exercer ou développer ?</label><textarea id="motMore"></textarea></div>
+<div class="field"><label for="motLearned">Qu’est-ce que votre parcours vous a appris sur vos préférences professionnelles ?</label><textarea id="motLearned"></textarea></div>
+<div class="field"><label for="motContrib">Qu’aimeriez-vous pouvoir davantage apporter ?</label><textarea id="motContrib"></textarea></div>
+</div>
+<div class="callout tip"><strong>Repère :</strong> une motivation devient convaincante lorsqu’elle aide votre interlocuteur à comprendre ce que vous recherchez dans les fonctions visées et pourquoi votre parcours vous y conduit.</div><div class="micro-practice" data-micro="project" data-seconds="45"><div><div class="micro-label">À voix haute · 45 s</div><h2>Expliquez votre projet et vos motivations</h2><p>Répondez oralement à deux questions : « où souhaitez-vous aller ? » et « pourquoi cette évolution a-t-elle du sens pour vous ? »</p></div><div class="micro-actions"><span class="micro-time">00:45</span><button class="btn secondary" data-micro-start="">Lancer 45 s</button><span class="micro-done" data-micro-done=""></span></div></div>
+</section>
+<section class="screen" data-screen="15" data-step="Adapter">
+<div class="eyebrow">Adapter</div><h1>Regardez maintenant votre parcours du point de vue de l’entretien</h1>
+<p class="lead">Jusqu’ici, vous avez travaillé sur vous. Il faut maintenant vérifier que votre argumentaire répond aussi à ce que votre interlocuteur cherche à comprendre.</p>
+<div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Notez jusqu’à 3 attentes importantes de l’entretien ou des fonctions visées.</li><li>Pour chacune, indiquez ce que votre parcours permet déjà de démontrer.</li><li>Repérez les attentes pour lesquelles vous devrez préparer un exemple plus solide.</li></ol><p class="next"><strong>Si vous ne connaissez pas encore les attentes précises :</strong> formulez ce que vous pensez devoir montrer, puis vérifiez-le plus tard dans la documentation de l’entretien.</p></div>
+<figure class="pedagogical-visual">
+<img alt="Schéma montrant que le parcours personnel est filtré par les attentes, la durée et le support de l’entretien pour construire un argumentaire adapté." src="assets/04_adapter_a_entretien.svg"/>
+<figcaption>Vous ne changez pas votre parcours : vous choisissez les preuves les plus utiles au regard de la situation.</figcaption>
+</figure>
+<div class="callout info" id="contextReminder"></div><div class="context-advice" id="contextAdvice" style="display:none"></div>
+<div class="expectation-row"><strong>Ce qui est attendu</strong><strong>Ce que je peux déjà prouver</strong><strong>Exemple ou point à préparer</strong></div>
+<div id="expectationRows"></div>
+<button class="btn secondary" id="addExpectation">＋ Ajouter une attente</button>
+</section>
+<section class="screen" data-screen="16" data-step="Préparer mon oral">
+<div class="eyebrow">Argumenter</div><h1>Construisez l’ossature de votre présentation</h1>
+<p class="lead">Vous n’allez pas écrire un texte à réciter. Vous allez préparer quelques repères qui vous permettront de parler avec structure et souplesse.</p>
+<div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Préparez votre introduction en donnant une clé de lecture de votre parcours.</li><li>Décidez de l’ordre dans lequel vous mobiliserez vos expériences.</li><li>Préparez la manière dont vous relierez votre parcours à votre projet et à vos motivations.</li><li>Écrivez seulement vos idées-clés, pas un discours complet.</li></ol></div>
+<figure class="pedagogical-visual portrait-infographic">
+<img alt="Infographie proposant une structure adaptable pour l’oral : introduction, parcours et preuves, projet et motivations, conclusion, avec des repères différents pour des présentations de cinq, dix ou quinze minutes." src="assets/infographies/05_structure_oral.webp"/>
+<figcaption><strong>Repère pédagogique :</strong> cette structure est un cadre de préparation, pas un script. Adaptez-la toujours à la durée et aux règles de l’entretien préparé.</figcaption>
+</figure>
+<div class="field"><label for="oralIntro">Mon introduction : qui je suis aujourd’hui + fil conducteur</label><textarea id="oralIntro" placeholder="Ex. Aujourd’hui…, mon parcours s’est progressivement construit autour de…"></textarea></div>
+<div class="field"><label for="oralStructure">Mes trois idées ou étapes principales</label><textarea id="oralStructure" placeholder="1. …\n2. …\n3. …"></textarea></div>
+<div class="field"><label for="oralProjectLink">Comment je relie mon parcours à mon projet et à mes motivations</label><textarea id="oralProjectLink"></textarea></div>
+<div class="field"><label for="oralConclusion">Ma conclusion : ce que je souhaite laisser comme idée finale</label><textarea id="oralConclusion"></textarea></div>
+<div class="micro-practice" data-micro="oral" data-seconds="60"><div><div class="micro-label">Premier assemblage · 60 s</div><h2>Essayez votre ouverture à voix haute</h2><p>Présentez qui vous êtes aujourd’hui, votre fil conducteur et l’annonce de vos idées principales. N’essayez pas encore de faire toute la présentation.</p></div><div class="micro-actions"><span class="micro-time">01:00</span><button class="btn secondary" data-micro-start="">Lancer 60 s</button><span class="micro-done" data-micro-done=""></span></div></div><div class="two-col"><div class="field"><label for="oralDuration">Durée d’entraînement</label><select id="oralDuration"><option value="180">3 minutes</option><option value="300">5 minutes</option><option value="600">10 minutes</option><option value="900">15 minutes</option></select></div><div class="callout info"><strong>Repère :</strong> si votre contexte comporte une durée imposée, elle est préchargée ici. Vous pourrez encore la modifier pour vous entraîner.</div></div>
+</section>
+<section class="screen" data-screen="17" data-step="Préparer mon oral">
+<div class="eyebrow">Anticiper</div><h1>Préparez les questions cachées dans vos expériences</h1>
+<p class="lead">Votre objectif n’est pas d’apprendre toutes les réponses possibles, mais de connaître suffisamment bien vos expériences pour pouvoir les analyser sous plusieurs angles.</p>
+<div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Pour chacune de vos trois expériences prioritaires, imaginez une question qui pourrait vous mettre en difficulté.</li><li>Notez ensuite les faits dont vous auriez besoin pour y répondre.</li><li>Utilisez les familles de questions proposées comme aide.</li></ol><p class="next"><strong>Familles utiles :</strong> rôle précis, difficulté, décision, résultat, compétence, recul, environnement, projection, motivation.</p></div>
+<figure class="pedagogical-visual portrait-infographic">
+<img alt="Boussole des grandes familles de questions possibles : parcours, compétences, situations vécues, recul, contribution, difficultés, projet et motivations." src="assets/infographies/06_boussole_questions.webp"/>
+<figcaption>Utilisez ces familles comme des angles de préparation. Elles servent à mieux connaître vos expériences, pas à mémoriser une liste de réponses.</figcaption>
+</figure>
+<div class="question-builder" id="questionBuilder"></div>
+</section>
+<section class="screen" data-screen="18" data-step="M’entraîner">
+<div class="eyebrow">Vérifier mes réflexes</div><h1>Défi méthodologique</h1>
+<p class="lead">Avant la simulation, vérifiez que les principaux réflexes de préparation sont bien installés.</p>
+<div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Répondez à 8 questions courtes.</li><li>Lisez le feedback après chaque réponse.</li><li>À la fin, repérez les principes à revoir si nécessaire.</li></ol><p class="next"><strong>Important :</strong> ce score mesure votre compréhension de la méthode, pas la qualité de votre parcours ni votre aptitude à réussir un entretien.</p></div>
+<div class="quiz-card" id="methodQuiz"></div>
+</section>
+<section class="screen sim-shell" data-screen="19" data-step="M’entraîner">
+<div id="preSim">
+<div class="eyebrow">S’entraîner</div><h1>Derniers repères avant la simulation</h1><p class="lead">Vous allez maintenant mobiliser l’ensemble de votre préparation à voix haute, comme en entretien.</p><div class="callout info" id="simAttemptCue" style="display:none"></div><div class="attempt-strip" id="simAttemptStrip"></div>
+<div class="activity-instruction">
+<strong class="title">Ce que vous devez faire</strong>
+<ol>
+<li>Relisez une dernière fois vos expériences prioritaires et votre projet.</li>
+<li>Choisissez la durée de votre présentation.</li>
+<li>Quand vous êtes prêt, cliquez sur <strong>« Je suis prêt »</strong>.</li>
+</ol>
+<p class="next"><strong>Attention :</strong> dès que vous lancez la simulation, vos notes disparaissent et le chronomètre démarre. Parlez à voix haute ; ne cherchez pas à réciter un texte.</p>
+</div>
+<div class="cards" style="grid-template-columns:repeat(2,1fr)">
+<div class="card personal"><h3>Mes expériences prioritaires</h3><div class="small" id="simExperiences"></div></div>
+<div class="card personal"><h3>Mon projet</h3><div class="small" id="simProject"></div></div>
+</div>
+<div class="field" style="max-width:360px"><label for="duration">Durée de la présentation</label><select id="duration"><option value="180">3 minutes</option><option value="300">5 minutes</option><option selected="" value="600">10 minutes</option><option value="900">15 minutes</option></select></div>
+<button class="btn primary" id="startSim">Je suis prêt →</button>
+</div>
+<div class="timer-view" id="timerSim" style="display:none">
+<div class="badge blue">Simulation en cours</div>
+<div class="timer" id="timerText">10:00</div>
+<h2>Présentez votre expérience et votre projet professionnel.</h2>
+<p class="muted">Prenez le temps nécessaire pour être clair et convaincant.</p>
+<div class="timer-note" id="timerNote">30 secondes — pensez à conclure</div>
+<div class="timer-controls"><button class="btn ghost" id="stopSim">Arrêter l’entraînement</button></div>
+</div>
+<div id="postSim" style="display:none">
+<div class="eyebrow">Débriefing</div><h1>Débriefez, puis recommencez</h1><p class="lead">Le premier essai sert à observer. Le deuxième sert à progresser en vous concentrant sur deux priorités seulement.</p>
+<div class="activity-instruction">
+<strong class="title">Ce que vous devez faire</strong>
+<ol>
+<li>Lisez les critères ci-dessous.</li>
+<li>Cliquez sur <strong>2 critères maximum</strong> que vous souhaitez améliorer en priorité.</li>
+<li>Relancez ensuite une simulation en vous concentrant sur ces deux points.</li>
+</ol>
+</div>
+<div class="cards" id="debriefCards" style="grid-template-columns:repeat(2,1fr)"></div>
+<div class="summary-card" id="debriefSummary" style="display:none"></div><div class="field" id="simReflectionWrap" style="display:none"><label for="simReflection">Après votre deuxième essai, qu’est-ce qui s’est amélioré ?</label><div class="help">Notez une observation courte : ce qui était plus clair, plus naturel ou mieux maîtrisé.</div><textarea id="simReflection"></textarea></div>
+<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+<button class="btn primary" id="restartSim">Faire un deuxième essai →</button>
+<button class="btn secondary" id="downloadPdfFinal">Télécharger mon dossier en PDF</button>
+<button class="btn ghost" id="goResources">Voir mon bilan →</button>
+</div>
+</div>
+</section>
+<section class="screen" data-screen="20" data-step="Bilan">
+<div class="eyebrow">Bilan</div>
+<h1>Regardez le chemin parcouru</h1>
+<p class="lead">Reprenez les cinq affirmations du début. Il ne s’agit pas d’une mesure scientifique de votre compétence : comparez simplement votre perception avant et après le travail réalisé.</p>
+<div class="activity-instruction"><strong class="title">Ce que vous devez faire</strong><ol><li>Répondez à nouveau aux 5 affirmations.</li><li>Cliquez sur <strong>« Voir mon évolution »</strong>.</li><li>Repérez les dimensions qui ont progressé et celles qui méritent encore de l’entraînement.</li></ol></div>
+<div class="question-builder" id="finalDiagnosticList"></div>
+<button class="btn primary" id="saveFinalDiagnostic">Voir mon évolution</button>
+<div class="summary-card" id="finalDiagnosticSummary" style="display:none;margin-top:20px"></div>
+</section><section class="screen" data-screen="21" data-step="Ressources">
+<div class="eyebrow">Ressources</div>
+<h1>Repartez avec vos outils de préparation</h1>
+<p class="lead">Votre travail dans le module est terminé. Conservez maintenant les ressources qui vous seront utiles pour poursuivre vos entraînements.</p>
+<div class="activity-instruction">
+<strong class="title">Ce que vous pouvez faire maintenant</strong>
+<ol>
+<li>Télécharger votre <strong>dossier personnel</strong>, qui reprend tout ce que vous avez écrit.</li>
+<li>Ouvrir ou télécharger la <strong>fiche réflexe</strong> en 2 pages pour vos prochains entraînements.</li>
+<li>Consulter les <strong>crédits et références</strong> du module.</li>
+</ol>
+<p class="next"><strong>Conseil :</strong> votre dossier personnel est une base de travail. Ne l’apprenez pas mot pour mot ; utilisez-le pour retrouver vos faits, vos exemples et vos idées-clés.</p>
+</div>
+<div class="resource-grid">
+<div class="resource-card primary-resource">
+<div class="eyebrow">Mon travail</div>
+<h2>Mon dossier personnel de préparation</h2>
+<p>Il reprend les expériences, preuves, compétences, fil conducteur, projet, motivations, trame orale, questions et priorités que vous avez saisis.</p>
+<div class="resource-actions"><button class="btn primary" id="downloadPdfResources">Télécharger mon dossier en PDF</button></div>
+</div>
+<div class="resource-card">
+<div class="eyebrow">Méthode</div>
+<h2>Ma fiche réflexe</h2>
+<p>Deux pages pour retrouver rapidement la méthode : sélectionner, démontrer, relier, se projeter, adapter et s’entraîner.</p>
+<div class="resource-actions">
+<a class="btn secondary btn-link" href="docs/fiche_reflexe_experience_projet.pdf" rel="noopener" target="_blank">Ouvrir la fiche réflexe</a>
+<a class="btn ghost btn-link" download="" href="docs/fiche_reflexe_experience_projet.pdf">Télécharger le PDF</a>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<div class="eyebrow">Crédits et références</div>
+<div class="credit-list">
+<div class="credit-block"><h2>Conception et réalisation</h2><p><strong>Institut de formation à l’administration publique (IFAP) de Nouvelle-Calédonie.</strong></p><p>Conception pédagogique, scénarisation, design d’expérience et réalisation du module.</p></div>
+<div class="credit-block"><h2>Références de contextualisation</h2><p>Les contextualisations relatives aux concours, examens professionnels, sélections professionnelles et autres dispositifs s’appuient sur les programmes, méthodologies et documents publiés par la direction des ressources humaines et de la fonction publique de Nouvelle-Calédonie (DRHFPNC), ainsi que sur le référentiel interne IFAP des épreuves.</p></div>
+<div class="credit-block advice"><h2>À savoir</h2><p>Les conseils proposés dans ce module constituent des repères méthodologiques de préparation. Lorsqu’une règle particulière est fixée par le texte, le programme ou la méthodologie de l’entretien préparé, cette règle prévaut. Les informations propres à une épreuve doivent être vérifiées dans les références officielles en vigueur.</p></div>
+<div class="credit-block"><h2>Données personnelles de préparation</h2><p>Les expériences, analyses, projets, motivations et autres contenus détaillés saisis dans le carnet sont conservés localement dans le navigateur dans cette version du module. Ils ne sont pas transmis au jury.</p></div>
+<div class="credit-block"><h2>Illustrations et ressources graphiques</h2><p>Illustrations pédagogiques et interface conçues pour l’IFAP. Les schémas sont utilisés comme supports d’apprentissage et non comme éléments décoratifs.</p></div>
+<div class="credit-block"><h2>Version</h2><p>Module « Valoriser son expérience et présenter son projet professionnel » - version de conception, septembre 2026.</p><p class="small muted">Module « Valoriser son expérience et présenter son projet professionnel » - version V3 pédagogique, septembre 2026.</p></div>
+</div>
+</section>
+</main>
+<footer><button class="btn ghost" id="prevBtn">← Précédent</button><button class="btn primary" id="nextBtn">Continuer →</button></footer>
+</div>
 <div class="drawer" id="notebook"><button class="icon-btn drawer-close" id="closeNotebook">✕</button><h2>Mon carnet de préparation</h2><div class="pdf-ready"><span aria-hidden="true">⇩</span><div><strong>Votre dossier personnel peut être exporté en PDF.</strong><div class="small muted">Le PDF regroupe les contenus que vous avez saisis dans le module. Il est généré sur votre appareil et n’est pas transmis à la plateforme.</div></div></div><div id="notebookBody"></div><div class="notebook-actions"><button class="btn primary" id="downloadPdf">Télécharger mon dossier en PDF</button><p class="notebook-export-note" id="pdfExportNote">Le document reprendra tout ce que vous avez écrit jusqu’à présent.</p></div></div>
 <div class="drawer" id="mobileDrawer"><button class="icon-btn drawer-close" id="closeMobile">✕</button><h2>Sommaire</h2><nav class="nav" id="mobileNav"></nav></div>
-
-<div class="modal" id="expModal"><div class="modal-card"><h2 id="expModalTitle">Ajouter une expérience</h2><div class="modal-scroll"><div class="callout info"><strong>Choisissez une expérience qui vous appartient.</strong> Cela peut être un poste, une mission importante, un projet, une responsabilité particulière ou une situation professionnelle marquante.</div><div class="field"><label>Expérience</label><div class="help">Donnez-lui un intitulé simple qui vous permet de l’identifier.</div><input id="expTitle" placeholder="Ex. Coordination d’un projet transversal" /></div><div class="field"><label>Période <span class="muted small">(facultatif)</span></label><input id="expPeriod" placeholder="Ex. 2022–2025" /></div><div class="field"><label>Qu’avez-vous réellement fait ?</label><div class="help">Ne recopiez pas votre fiche de poste : indiquez en quelques lignes votre contribution personnelle.</div><textarea id="expAction" placeholder="Ex. J’ai coordonné…, j’ai organisé…, j’ai proposé…"></textarea></div><div class="field"><label>Qu’est-ce que cette expérience pourrait permettre de montrer ?</label><div class="help">Pensez à une compétence, une progression, une responsabilité, une expertise ou un apprentissage.</div><textarea id="expValue" placeholder="Ex. coordination, autonomie, expertise métier, capacité à proposer…"></textarea></div></div><div class="modal-actions"><button class="btn ghost" id="cancelExp">Annuler</button><button class="btn primary" id="saveExp">Enregistrer</button></div></div></div>
+<div class="modal" id="expModal"><div class="modal-card"><h2 id="expModalTitle">Ajouter une expérience</h2><div class="modal-scroll"><div class="callout info"><strong>Choisissez une expérience qui vous appartient.</strong> Cela peut être un poste, une mission importante, un projet, une responsabilité particulière ou une situation professionnelle marquante.</div><div class="field"><label>Expérience</label><div class="help">Donnez-lui un intitulé simple qui vous permet de l’identifier.</div><input id="expTitle" placeholder="Ex. Coordination d’un projet transversal"/></div><div class="field"><label>Période <span class="muted small">(facultatif)</span></label><input id="expPeriod" placeholder="Ex. 2022–2025"/></div><div class="field"><label>Qu’avez-vous réellement fait ?</label><div class="help">Ne recopiez pas votre fiche de poste : indiquez en quelques lignes votre contribution personnelle.</div><textarea id="expAction" placeholder="Ex. J’ai coordonné…, j’ai organisé…, j’ai proposé…"></textarea></div><div class="field"><label>Qu’est-ce que cette expérience pourrait permettre de montrer ?</label><div class="help">Pensez à une compétence, une progression, une responsabilité, une expertise ou un apprentissage.</div><textarea id="expValue" placeholder="Ex. coordination, autonomie, expertise métier, capacité à proposer…"></textarea></div></div><div class="modal-actions"><button class="btn ghost" id="cancelExp">Annuler</button><button class="btn primary" id="saveExp">Enregistrer</button></div></div></div>
 <div class="modal" id="projModal"><div class="modal-card"><h2 id="projTitle">Mon projet</h2><div class="modal-scroll"><div class="callout info"><strong>Répondez simplement à la question ci-dessous avec vos propres mots.</strong> Une ou deux idées claires suffisent à ce stade ; vous pourrez revenir les modifier.</div><div class="field"><label id="projLabel"></label><textarea id="projText"></textarea></div></div><div class="modal-actions"><button class="btn ghost" id="cancelProj">Annuler</button><button class="btn primary" id="saveProj">Enregistrer</button></div></div></div>
-
 <script>
 const STORAGE='ifap_proto_parcours_v2';
-const defaultState={schemaVersion:3,screen:0,context:{type:'',sourceDocument:'',duration:''},diagnostic:[],diagnosticDone:false,experiences:[],project:{wish:'',why:'',prep:'',contrib:''},motivations:{attract:'',more:'',learned:'',contrib:''},progression:{dims:[],priority:[],summary:''},thread:{observe:'',common:'',evolution:'',summary:''},identity:{ease:'',asked:'',contribution:'',summary:''},expectations:[],oral:{intro:'',structure:'',projectLink:'',conclusion:'',duration:600},questions:[],labIndex:0,labStage:0,debrief:[],proofQuizAnswered:false,chronologyAnswered:false,quiz:{order:[],index:0,score:0,answers:[],done:false},simCompleted:false,introVersion:2};
+const defaultState={schemaVersion:4,screen:0,context:{type:'',sourceDocument:'',duration:''},diagnostic:[],diagnosticDone:false,finalDiagnostic:[],finalDiagnosticDone:false,experiences:[],project:{wish:'',why:'',prep:'',contrib:''},projectCheck:[],motivations:{attract:'',more:'',learned:'',contrib:''},progression:{dims:[],priority:[],summary:''},thread:{observe:'',common:'',evolution:'',summary:''},identity:{ease:'',asked:'',contribution:'',summary:''},expectations:[],oral:{intro:'',structure:'',projectLink:'',conclusion:'',duration:600},questions:[],labIndex:0,labStage:0,debrief:[],proofQuizAnswered:false,chronologyAnswered:false,quiz:{order:[],index:0,score:0,answers:[],done:false},simCompleted:false,simAttempts:0,simReflection:'',microPractice:{},introVersion:3};
 let state=load();let timerInt=null,timerLeft=600,editingExp=null,currentProj=null;
 function deepMerge(base,src){const out={...base,...src};for(const k of Object.keys(base)){if(base[k]&&typeof base[k]==='object'&&!Array.isArray(base[k]))out[k]={...base[k],...(src?.[k]||{})}}return out}
-function load(){try{const parsed=JSON.parse(localStorage.getItem(STORAGE)||'{}');let merged=deepMerge(defaultState,parsed);if((parsed.schemaVersion||0)<3){const map={0:0,1:1,2:2,3:3,4:4,5:7,6:8,7:9,8:13,9:19};merged.screen=map[parsed.screen]??0;merged.schemaVersion=3;merged.diagnosticDone=false}return merged}catch(e){return JSON.parse(JSON.stringify(defaultState))}}
-function save(){state.schemaVersion=3;localStorage.setItem(STORAGE,JSON.stringify(state));updateNotebook()}
+function load(){try{const parsed=JSON.parse(localStorage.getItem(STORAGE)||'{}');let merged=deepMerge(defaultState,parsed);if((parsed.schemaVersion||0)<3){const map={0:0,1:1,2:2,3:3,4:4,5:7,6:8,7:9,8:13,9:19};merged.screen=map[parsed.screen]??0;merged.diagnosticDone=false}if((parsed.schemaVersion||0)<4){merged.schemaVersion=4;merged.finalDiagnostic=merged.finalDiagnostic||[];merged.finalDiagnosticDone=!!merged.finalDiagnosticDone;merged.projectCheck=merged.projectCheck||[];merged.simAttempts=merged.simCompleted?1:0;merged.simReflection=merged.simReflection||'';merged.microPractice=merged.microPractice||{};if(merged.screen===20)merged.screen=21}return merged}catch(e){return JSON.parse(JSON.stringify(defaultState))}}
+function save(){state.schemaVersion=4;localStorage.setItem(STORAGE,JSON.stringify(state));updateNotebook()}
 const screens=[...document.querySelectorAll('.screen')];
-const navSteps=['Comprendre les enjeux','Préparer','Sélectionner','Démontrer','Comprendre mon parcours','Construire mon projet','Adapter','Préparer mon oral','M’entraîner','Ressources'];
-function renderNav(){const currentStep=screens[state.screen]?.dataset.step||navSteps[0];const completed=new Set(screens.slice(0,state.screen).map(s=>s.dataset.step));const html=navSteps.map(step=>`<button class="${step===currentStep?'active':''} ${completed.has(step)?'done':''}" data-stepnav="${step}"><span class="dot"></span><span>${step}</span></button>`).join('');document.getElementById('sideNav').innerHTML=html;document.getElementById('mobileNav').innerHTML=html;document.querySelectorAll('[data-stepnav]').forEach(b=>b.onclick=()=>goToStep(b.dataset.step))}
+const navSteps=['Comprendre les enjeux','Préparer','Sélectionner','Démontrer','Comprendre mon parcours','Construire mon projet','Adapter','Préparer mon oral','M’entraîner','Bilan','Ressources'];
+function renderNav(){const currentStep=screens[state.screen]?.dataset.step||navSteps[0];const html=navSteps.map(step=>`<button class="${step===currentStep?'active':''}" data-stepnav="${step}"><span class="dot"></span><span>${step}</span></button>`).join('');document.getElementById('sideNav').innerHTML=html;document.getElementById('mobileNav').innerHTML=html;document.querySelectorAll('[data-stepnav]').forEach(b=>b.onclick=()=>goToStep(b.dataset.step))}
 function scannerReady(){return state.experiences.length>=3 && state.experiences.filter(e=>e.class==='presentation').length===3}
 function contextReady(){return !!state.context.type && !!state.context.sourceDocument}
-function labReady(){const e=state.experiences.filter(e=>e.class==='presentation')[0];return !!e && [0,1,2,3,4].every(i=>String((e.lab||{})[i]||'').trim())}
+function labReady(){const p=state.experiences.filter(e=>e.class==='presentation');return p.length===3&&p.every(e=>[0,1,2,3,4].every(i=>String((e.lab||{})[i]||'').trim()))}
 function motivationsReady(){return Object.values(state.motivations).every(v=>String(v||'').trim())}
 function oralReady(){return ['intro','structure','projectLink','conclusion'].every(k=>String(state.oral[k]||'').trim())}
 function questionsReady(){const p=state.experiences.filter(e=>e.class==='presentation');return p.length===3 && p.every(e=>{const q=state.questions.find(x=>x.expTitle===e.title);return q&&String(q.question||'').trim()&&String(q.facts||'').trim()})}
-function goToStep(step){const target=screens.findIndex(s=>s.dataset.step===step);if(target>=5&&!state.chronologyAnswered){go(2);alertLater('Avant de commencer la démarche, réalisez l’activité qui distingue une chronologie d’une présentation qui donne du sens au parcours.');return}if(target>=7&&!contextReady()){go(5);alertLater('Configurez d’abord le contexte et le support de votre entretien.');return}if(target>7&&!scannerReady()){go(7);alertLater('Saisissez au moins 3 expériences puis choisissez exactement 3 expériences prioritaires.');return}if(target>=10&&!labReady()){go(9);alertLater('Analysez d’abord complètement votre première expérience prioritaire dans le laboratoire.');return}if(target>=13&&!String(state.identity.summary||'').trim()){go(12);alertLater('Complétez d’abord votre synthèse professionnelle actuelle.');return}if(target>=15&&!motivationsReady()){go(14);alertLater('Complétez vos motivations avant d’adapter votre préparation à l’entretien.');return}if(target>=18&&!oralReady()){go(16);alertLater('Préparez d’abord l’ossature de votre présentation.');return}if(target>=19&&!state.quiz.done){go(18);alertLater('Terminez le défi méthodologique avant de lancer la simulation.');return}if(target>=20&&!state.simCompleted){go(19);alertLater('Réalisez d’abord une simulation avant d’accéder aux ressources finales.');return}if(target>=0)go(target);document.getElementById('mobileDrawer').classList.remove('open')}
+function goToStep(step){const target=screens.findIndex(s=>s.dataset.step===step);if(target>=0)go(target);document.getElementById('mobileDrawer').classList.remove('open')}
 function alertLater(t){document.getElementById('mobileDrawer').classList.remove('open');setTimeout(()=>alert(t),50)}
-function go(i){i=Math.max(0,Math.min(screens.length-1,i));state.screen=i;save();screens.forEach((s,n)=>s.classList.toggle('active',n===i));document.body.classList.remove('sim-mode');if(i!==19){document.getElementById('timerSim').style.display='none';document.getElementById('preSim').style.display='block';document.getElementById('postSim').style.display='none'}renderNav();updateProgress();document.getElementById('prevBtn').disabled=i===0;document.getElementById('nextBtn').style.display=(i===19||i===screens.length-1)?'none':'inline-flex';window.scrollTo({top:0,behavior:'smooth'});screens[i].querySelector('h1')?.setAttribute('tabindex','-1');screens[i].querySelector('h1')?.focus({preventScroll:true});if(i===5)renderContext();if(i===6)renderDiagnostic();if(i===7)renderExperiences();if(i===8&&state.proofQuizAnswered)document.getElementById('proofNextHint').style.display='block';if(i===9)renderLab();if(i===10)renderProgression();if(i===11)renderThread();if(i===12)renderIdentity();if(i===13)updateProjectButtons();if(i===14)renderMotivations();if(i===15)renderExpectations();if(i===16)renderOral();if(i===17)renderQuestions();if(i===18)renderMethodQuiz();if(i===19)renderSimPreview();updateNextState()}
-function updateProgress(){const pct=Math.round(state.screen/(screens.length-1)*100);document.getElementById('progressBar').style.width=pct+'%';document.getElementById('progressTxt').textContent=pct+' %'}
+function go(i){i=Math.max(0,Math.min(screens.length-1,i));state.screen=i;save();screens.forEach((s,n)=>s.classList.toggle('active',n===i));document.body.classList.remove('sim-mode');if(i!==19){document.getElementById('timerSim').style.display='none';document.getElementById('preSim').style.display='block';document.getElementById('postSim').style.display='none'}renderNav();updateProgress();document.getElementById('prevBtn').disabled=i===0;document.getElementById('nextBtn').style.display=(i===19||i===screens.length-1)?'none':'inline-flex';window.scrollTo({top:0,behavior:'smooth'});screens[i].querySelector('h1')?.setAttribute('tabindex','-1');screens[i].querySelector('h1')?.focus({preventScroll:true});if(i===5)renderContext();if(i===6)renderDiagnostic();if(i===7)renderExperiences();if(i===8&&state.proofQuizAnswered)document.getElementById('proofNextHint').style.display='block';if(i===9)renderLab();if(i===10)renderProgression();if(i===11)renderThread();if(i===12)renderIdentity();if(i===13)updateProjectButtons();if(i===14)renderMotivations();if(i===15){renderExpectations();renderContextAdvice()}if(i===16)renderOral();if(i===17)renderQuestions();if(i===18)renderMethodQuiz();if(i===19)renderSimPreview();if(i===20)renderFinalDiagnostic();renderFocusCue(i);updateNextState()}
+function updateProgress(){const pct=Math.round(state.screen/(screens.length-1)*100);document.getElementById('progressBar').style.width=pct+'%';document.getElementById('progressTxt').textContent='Repère '+(state.screen+1)+' / '+screens.length;const n=document.getElementById('nextBtn');if(n)n.textContent=state.screen===0?'Commencer le parcours →':'Continuer →'}
 document.getElementById('prevBtn').onclick=()=>go(state.screen-1);document.getElementById('nextBtn').onclick=()=>{if(!document.getElementById('nextBtn').disabled)go(state.screen+1)};document.querySelectorAll('[data-next]').forEach(b=>b.onclick=()=>go(state.screen+1));
-function updateNextState(){const next=document.getElementById('nextBtn');let ok=true,msg='';if(state.screen===2){ok=state.chronologyAnswered;msg='Choisissez la réponse qui aide le mieux à comprendre l’évolution professionnelle.'}else if(state.screen===5){ok=contextReady();msg='Choisissez le contexte et le support de votre entretien.'}else if(state.screen===6){ok=state.diagnosticDone;msg='Complétez les 5 affirmations puis affichez vos points de vigilance.'}else if(state.screen===7){ok=scannerReady();msg='Ajoutez au moins 3 expériences puis choisissez exactement 3 expériences prioritaires.'}else if(state.screen===8){ok=state.proofQuizAnswered;msg='Répondez au micro-défi avant de poursuivre.'}else if(state.screen===9){ok=labReady();msg='Complétez les 5 étapes de votre première expérience prioritaire.'}else if(state.screen===10){ok=state.progression.priority.length>0&&String(state.progression.summary||'').trim();msg='Sélectionnez au moins une dimension prioritaire et décrivez votre progression.'}else if(state.screen===11){ok=String(state.thread.summary||'').trim();msg='Rédigez une phrase résumant votre fil conducteur.'}else if(state.screen===12){ok=String(state.identity.summary||'').trim();msg='Complétez votre phrase de synthèse professionnelle.'}else if(state.screen===13){ok=Object.values(state.project).every(v=>String(v||'').trim());msg='Complétez les quatre dimensions de votre projet.'}else if(state.screen===14){ok=motivationsReady();msg='Complétez les quatre questions sur vos motivations.'}else if(state.screen===15){ok=state.expectations.some(x=>String(x.expected||'').trim());msg='Ajoutez au moins une attente de l’entretien.'}else if(state.screen===16){ok=oralReady();msg='Complétez les quatre repères de votre présentation.'}else if(state.screen===17){ok=questionsReady();msg='Préparez une question difficile et les faits utiles pour chacune de vos 3 expériences.'}else if(state.screen===18){ok=state.quiz.done;msg='Terminez les 8 questions du défi méthodologique.'}next.disabled=!ok;next.title=ok?'':msg}
+const startCourseBtn=document.getElementById('startCourse');if(startCourseBtn)startCourseBtn.onclick=()=>go(1);
+function updateNextState(){const next=document.getElementById('nextBtn');let ok=true,msg='';if(state.screen===2){ok=state.chronologyAnswered;msg='Choisissez la réponse qui aide le mieux à comprendre l’évolution professionnelle.'}else if(state.screen===5){ok=contextReady();msg='Choisissez le contexte et le support de votre entretien.'}else if(state.screen===6){ok=state.diagnosticDone;msg='Complétez les 5 affirmations puis affichez vos points de vigilance.'}else if(state.screen===7){ok=scannerReady();msg='Ajoutez au moins 3 expériences puis choisissez exactement 3 expériences prioritaires.'}else if(state.screen===8){ok=state.proofQuizAnswered;msg='Répondez au micro-défi avant de poursuivre.'}else if(state.screen===9){ok=labReady();msg='Analysez les 3 expériences prioritaires avec les 5 étapes de la preuve.'}else if(state.screen===10){ok=state.progression.priority.length>0&&String(state.progression.summary||'').trim();msg='Sélectionnez au moins une dimension prioritaire et décrivez votre progression.'}else if(state.screen===11){ok=String(state.thread.summary||'').trim();msg='Rédigez une phrase résumant votre fil conducteur.'}else if(state.screen===12){ok=String(state.identity.summary||'').trim();msg='Complétez votre phrase de synthèse professionnelle.'}else if(state.screen===13){ok=Object.values(state.project).every(v=>String(v||'').trim());msg='Complétez les quatre dimensions de votre projet.'}else if(state.screen===14){ok=motivationsReady();msg='Complétez les quatre questions sur vos motivations.'}else if(state.screen===15){ok=state.expectations.some(x=>String(x.expected||'').trim());msg='Ajoutez au moins une attente de l’entretien.'}else if(state.screen===16){ok=oralReady();msg='Complétez les quatre repères de votre présentation.'}else if(state.screen===17){ok=questionsReady();msg='Préparez une question difficile et les faits utiles pour chacune de vos 3 expériences.'}else if(state.screen===18){ok=state.quiz.done;msg='Terminez les 8 questions du défi méthodologique.'}else if(state.screen===20){ok=state.finalDiagnosticDone;msg='Répondez aux 5 affirmations puis affichez votre évolution.'}next.disabled=!ok;next.title=ok?'':msg}
 
 // Chronology activity
 const chrono=document.querySelectorAll('input[name="chronology"]');chrono.forEach(r=>{if(state.chronologyAnswered&&r.value==='b')r.checked=true;r.onchange=()=>{state.chronologyAnswered=true;save();const f=document.getElementById('chronologyFeedback');f.style.display='block';f.innerHTML=r.value==='b'?'<strong>Oui.</strong> Cette réponse sélectionne et interprète le parcours : elle aide à comprendre une évolution.':'<strong>Cette réponse est exacte, mais elle reste surtout chronologique.</strong> Une présentation utile aide aussi à comprendre ce que le parcours a construit et pourquoi certaines expériences comptent davantage.';updateNextState()}});
@@ -590,9 +628,12 @@ const proof=document.querySelectorAll('input[name="pq"]');proof.forEach(r=>{r.on
 
 // Lab
 const labMeta=[['Situation','Quelle était la situation ?','Décrivez le contexte, l’enjeu ou le problème à traiter.','Plusieurs services utilisaient des méthodes différentes, avec des délais et des incompréhensions.'],['Action','Qu’avez-vous fait personnellement ?','Précisez votre rôle, vos décisions, vos choix et vos actions.','J’ai cartographié les pratiques, réuni les acteurs et proposé un circuit commun.'],['Résultat','Quel résultat ou effet ?','Indiquez ce qui a été produit, décidé, amélioré ou résolu.','Une procédure commune a été adoptée et les retours de dossiers ont diminué.'],['Compétence','Qu’est-ce que cela démontre ?','Nommez ce que cette situation permet raisonnablement d’affirmer que vous savez faire.','Analyse, coordination transversale, animation et capacité de proposition.'],['Recul','Qu’en avez-vous appris ?','Expliquez ce que vous avez changé dans votre manière d’agir ou ce que vous feriez différemment.','J’ai appris qu’une solution technique ne suffit pas : il faut construire tôt l’adhésion des acteurs.']];
-function labExp(){const ps=state.experiences.filter(e=>e.class==='presentation');return ps[state.labIndex]||state.experiences[0]}
-function renderLab(){const e=labExp();if(!e)return;document.querySelector('#labTitle h2').textContent=e.title;const nav=document.getElementById('labNav');nav.innerHTML=labMeta.map((m,i)=>`<button class="${i===state.labStage?'active':''} ${(e.lab||{})[i]?'done':''}" data-lab="${i}">${i+1} ${m[0]}</button>`).join('');nav.querySelectorAll('button').forEach(b=>b.onclick=()=>{state.labStage=+b.dataset.lab;save();renderLab()});const stages=document.getElementById('labStages');stages.innerHTML=labMeta.map((m,i)=>`<div class="stage ${i===state.labStage?'active':''}"><div class="small muted">${i+1} / 5</div><h2>${m[1]}</h2><p>${m[2]}</p><div class="field"><textarea data-labtxt="${i}" placeholder="Écrivez ici…">${esc((e.lab||{})[i]||'')}</textarea></div></div>`).join('');stages.querySelectorAll('textarea').forEach(t=>t.oninput=ev=>{e.lab=e.lab||{};e.lab[ev.target.dataset.labtxt]=ev.target.value;save();updateNextState()});document.getElementById('labAdvice').textContent=labMeta[state.labStage][2];document.getElementById('labExample').textContent=labMeta[state.labStage][3];document.getElementById('labBack').disabled=state.labStage===0;document.getElementById('labNext').textContent=state.labStage===4?'Voir ma synthèse':'Étape suivante →';document.getElementById('labSummary').style.display='none'}
-document.getElementById('labBack').onclick=()=>{state.labStage=Math.max(0,state.labStage-1);save();renderLab()};document.getElementById('labNext').onclick=()=>{const e=labExp();if(!String((e.lab||{})[state.labStage]||'').trim()){alert('Écrivez quelques éléments avant de passer à l’étape suivante.');return}if(state.labStage<4){state.labStage++;save();renderLab()}else{const s=document.getElementById('labSummary');s.style.display='block';s.innerHTML='<div class="eyebrow">Votre synthèse</div>'+labMeta.map((m,i)=>`<p><strong>${m[0]} :</strong> ${esc((e.lab||{})[i]||'—')}</p>`).join('');updateNextState()}};
+function labExp(){const ps=state.experiences.filter(e=>e.class==='presentation');return ps[state.labIndex]||ps[0]||state.experiences[0]}
+function expComplete(e){return !!e&&[0,1,2,3,4].every(i=>String((e.lab||{})[i]||'').trim())}
+const selfCheckItems=['La situation est assez précise pour être comprise','Ma contribution personnelle est clairement identifiable','Le résultat ou l’effet est concret','La compétence découle réellement des faits','Mon recul montre ce que j’ai appris'];
+function renderLab(){const ps=state.experiences.filter(e=>e.class==='presentation');if(!ps.length)return;if(state.labIndex>=ps.length)state.labIndex=0;const e=labExp(),level=['Guidé','Semi-guidé','En autonomie'][state.labIndex]||'Guidé';document.querySelector('#labTitle h2').textContent=e.title;document.querySelector('#labTitle .badge').textContent=`EXPÉRIENCE ${state.labIndex+1} · ${level.toUpperCase()}`;const tabs=document.getElementById('labExpTabs');tabs.innerHTML=ps.map((x,i)=>`<button class="exp-tab ${i===state.labIndex?'active':''} ${expComplete(x)?'complete':''}" data-exp-tab="${i}"><strong>${i+1}. ${esc(x.title)}</strong><span class="level">${['Guidage complet','Conseils sans exemple','Analyse en autonomie'][i]||''}</span></button>`).join('');tabs.querySelectorAll('[data-exp-tab]').forEach(b=>b.onclick=()=>{state.labIndex=+b.dataset.expTab;state.labStage=0;save();renderLab()});const nav=document.getElementById('labNav');nav.innerHTML=labMeta.map((m,i)=>`<button class="${i===state.labStage?'active':''} ${(e.lab||{})[i]?'done':''}" data-lab="${i}">${i+1} ${m[0]}</button>`).join('');nav.querySelectorAll('button').forEach(b=>b.onclick=()=>{state.labStage=+b.dataset.lab;save();renderLab()});const stages=document.getElementById('labStages');stages.innerHTML=labMeta.map((m,i)=>`<div class="stage ${i===state.labStage?'active':''}"><div class="small muted">${i+1} / 5 · ${level}</div><h2>${m[1]}</h2><p>${state.labIndex===2?'Appuyez-vous sur la méthode déjà utilisée pour les deux premières expériences.':m[2]}</p><div class="field"><textarea data-labtxt="${i}" placeholder="Écrivez ici…">${esc((e.lab||{})[i]||'')}</textarea></div></div>`).join('');stages.querySelectorAll('textarea').forEach(t=>t.oninput=ev=>{e.lab=e.lab||{};e.lab[ev.target.dataset.labtxt]=ev.target.value;save();updateNextState()});document.getElementById('labAdviceCard').style.display=state.labIndex<2?'block':'none';document.getElementById('labExampleCard').style.display=state.labIndex===0?'block':'none';document.getElementById('labAutonomyCard').style.display=state.labIndex===2?'block':'none';document.getElementById('labAdvice').textContent=labMeta[state.labStage][2];document.getElementById('labExample').textContent=labMeta[state.labStage][3];document.getElementById('labBack').disabled=state.labStage===0;document.getElementById('labNext').textContent=state.labStage===4?'Voir ma synthèse':'Étape suivante →';document.getElementById('labSummary').style.display='none'}
+function showLabSummary(){const e=labExp(),s=document.getElementById('labSummary');e.selfCheck=e.selfCheck||[];s.style.display='block';s.innerHTML=`<div class="eyebrow">Synthèse · expérience ${state.labIndex+1}</div>${labMeta.map((m,i)=>`<p><strong>${m[0]} :</strong> ${esc((e.lab||{})[i]||'—')}</p>`).join('')}<div class="self-check"><strong>Ma preuve tient-elle ?</strong><div class="self-check-grid">${selfCheckItems.map((x,i)=>`<label><input type="checkbox" data-self="${i}" ${e.selfCheck.includes(i)?'checked':''}> ${esc(x)}</label>`).join('')}</div><p class="small muted">Cochez ce qui vous paraît suffisamment solide. Les points non cochés deviennent simplement des pistes de reprise.</p></div>${state.labIndex<2?'<button class="btn primary" id="nextLabExperience">Passer à l’expérience suivante →</button>':'<div class="callout tip"><strong>Vos trois expériences sont travaillées.</strong> Vous pouvez revenir sur l’une d’elles avec les onglets ci-dessus si un point mérite d’être précisé.</div>'}`;s.querySelectorAll('[data-self]').forEach(c=>c.onchange=()=>{const i=+c.dataset.self;if(c.checked&&!e.selfCheck.includes(i))e.selfCheck.push(i);if(!c.checked)e.selfCheck=e.selfCheck.filter(x=>x!==i);save()});const b=document.getElementById('nextLabExperience');if(b)b.onclick=()=>{state.labIndex++;state.labStage=0;save();renderLab();window.scrollTo({top:document.querySelector('#labExpTabs').offsetTop-100,behavior:'smooth'})};updateNextState()}
+document.getElementById('labBack').onclick=()=>{state.labStage=Math.max(0,state.labStage-1);save();renderLab()};document.getElementById('labNext').onclick=()=>{const e=labExp();if(!String((e.lab||{})[state.labStage]||'').trim()){alert('Écrivez quelques éléments avant de passer à l’étape suivante.');return}if(state.labStage<4){state.labStage++;save();renderLab()}else showLabSummary()};
 
 // Progression
 const progDims=['Expertise','Autonomie','Responsabilité','Complexité','Transversalité','Relation aux partenaires','Conseil','Pilotage','Management','Résolution de problèmes','Accompagnement du changement','Transmission','Relation aux usagers'];
@@ -607,7 +648,7 @@ function renderIdentity(){bindText('identityEase',state.identity,'ease');bindTex
 // Project
 const projLabels={wish:['Je souhaite…','Qu’aimeriez-vous davantage exercer ou développer ?'],why:['Parce que…','Pourquoi cette évolution vous attire-t-elle ?'],prep:['Mon parcours m’y prépare…','Quelles expériences ou compétences rendent ce projet crédible ?'],contrib:['Je souhaite apporter…','Quelle contribution souhaitez-vous développer ?']};
 document.querySelectorAll('.proj-edit').forEach(b=>b.onclick=()=>{currentProj=b.dataset.proj;document.getElementById('projTitle').textContent=projLabels[currentProj][0];document.getElementById('projLabel').textContent=projLabels[currentProj][1];document.getElementById('projText').value=state.project[currentProj]||'';document.getElementById('projModal').classList.add('open')});document.getElementById('cancelProj').onclick=()=>document.getElementById('projModal').classList.remove('open');document.getElementById('saveProj').onclick=()=>{state.project[currentProj]=document.getElementById('projText').value.trim();save();document.getElementById('projModal').classList.remove('open');updateProjectButtons();updateNextState()};function updateProjectButtons(){document.querySelectorAll('.proj-edit').forEach(b=>{b.textContent=state.project[b.dataset.proj]?'Modifier':'Compléter'})}
-document.getElementById('testProject').onclick=()=>{const vals=Object.values(state.project);const filled=vals.filter(v=>String(v||'').trim()).length;const sum=document.getElementById('projectSummary');sum.style.display='block';sum.innerHTML=`<div class="eyebrow">Test de solidité</div><div class="status-strip"><span class="status-pill ${state.project.wish?'done':''}">Précision</span><span class="status-pill ${state.project.prep?'done':''}">Cohérence</span><span class="status-pill ${state.project.why?'done':''}">Motivation</span><span class="status-pill ${state.project.contrib?'done':''}">Contribution</span></div><p>${filled===4?'Les quatre dimensions sont présentes. Relisez-les maintenant pour vérifier qu’elles se répondent vraiment.':'Complétez encore les dimensions manquantes. Le projet n’a pas besoin d’être long, mais il doit être précis, cohérent, motivé et orienté vers une contribution.'}</p>`;updateNextState()};
+document.getElementById('testProject').onclick=()=>{const vals=Object.values(state.project),filled=vals.filter(v=>String(v||'').trim()).length,sum=document.getElementById('projectSummary');state.projectCheck=state.projectCheck||[];sum.style.display='block';if(filled<4){sum.innerHTML='<div class="eyebrow">À compléter</div><p>Les quatre dimensions doivent d’abord être renseignées pour pouvoir relire votre projet.</p>';return}const criteria=['Mon projet indique une direction suffisamment précise','Je peux expliquer pourquoi cette évolution m’attire','Je peux relier ce projet à des expériences ou compétences réelles','Je peux expliquer ce que je souhaite apporter','Mes quatre réponses racontent une histoire cohérente'];sum.innerHTML=`<div class="eyebrow">Autocontrôle</div><h2>Relisez votre projet avec 5 critères</h2><div class="project-check">${criteria.map((x,i)=>`<label><input type="checkbox" data-pcheck="${i}" ${state.projectCheck.includes(i)?'checked':''}> ${esc(x)}</label>`).join('')}</div><p class="small muted">Ce contrôle ne note pas votre projet. Il vous aide à identifier ce qui mérite encore d’être précisé.</p>`;sum.querySelectorAll('[data-pcheck]').forEach(c=>c.onchange=()=>{const i=+c.dataset.pcheck;if(c.checked&&!state.projectCheck.includes(i))state.projectCheck.push(i);if(!c.checked)state.projectCheck=state.projectCheck.filter(x=>x!==i);save()});updateNextState()};
 
 // Motivations
 function renderMotivations(){bindText('motAttract',state.motivations,'attract');bindText('motMore',state.motivations,'more');bindText('motLearned',state.motivations,'learned');bindText('motContrib',state.motivations,'contrib')}
@@ -615,6 +656,7 @@ function renderMotivations(){bindText('motAttract',state.motivations,'attract');
 // Expectations
 function renderExpectations(){if(!state.expectations.length)state.expectations=[{expected:'',proof:'',prepare:''}];const w=document.getElementById('expectationRows');w.innerHTML=state.expectations.map((x,i)=>`<div class="expectation-row"><textarea data-ex="expected" data-i="${i}" placeholder="Ex. montrer ma capacité à coordonner…">${esc(x.expected)}</textarea><textarea data-ex="proof" data-i="${i}" placeholder="Ce que mon parcours permet de montrer…">${esc(x.proof)}</textarea><textarea data-ex="prepare" data-i="${i}" placeholder="Exemple ou point à renforcer…">${esc(x.prepare)}</textarea></div>`).join('');w.querySelectorAll('textarea').forEach(t=>t.oninput=e=>{state.expectations[+e.target.dataset.i][e.target.dataset.ex]=e.target.value;save();updateNextState()});document.getElementById('addExpectation').style.display=state.expectations.length>=3?'none':'inline-flex';const rem=document.getElementById('contextReminder');rem.innerHTML=`<strong>Votre contexte :</strong> ${esc(ctxLabels[state.context.type]||'entretien à préciser')}, à partir de ${esc(sourceLabels[state.context.sourceDocument]||'un support à préciser')}${state.context.duration?`, ${esc(state.context.duration)} minute(s)`:''}.`}
 document.getElementById('addExpectation').onclick=()=>{if(state.expectations.length<3){state.expectations.push({expected:'',proof:'',prepare:''});save();renderExpectations()}};
+function renderContextAdvice(){const w=document.getElementById('contextAdvice');if(!w)return;let txt='';switch(state.context.sourceDocument){case 'cv':txt='<strong>Avec un CV :</strong> votre interlocuteur voit déjà la chronologie. Utilisez surtout votre temps pour expliquer vos choix, vos preuves et votre évolution.';break;case 'professional_file':case 'experience_file':txt='<strong>Avec un dossier :</strong> les faits sont déjà disponibles. L’oral doit apporter votre contribution personnelle, votre analyse, votre recul et les liens avec votre projet.';break;case 'information_sheet':txt='<strong>Avec une fiche individuelle :</strong> faites les liens que le document ne fait pas à votre place : compétences, progression, motivations et projet.';break;case 'none':txt='<strong>Sans support :</strong> donnez suffisamment de repères pour que votre interlocuteur puisse situer votre parcours sans se perdre dans la chronologie.';break;case 'unknown':txt='<strong>Support encore inconnu :</strong> gardez votre préparation générique pour le moment et vérifiez le format officiel avant votre dernier entraînement.';break;default:txt='<strong>Repère :</strong> adaptez toujours la quantité de contexte et les preuves mobilisées au support réellement disponible pendant l’entretien.'}w.innerHTML=txt;w.style.display='block'}
 
 // Oral
 function renderOral(){bindText('oralIntro',state.oral,'intro');bindText('oralStructure',state.oral,'structure');bindText('oralProjectLink',state.oral,'projectLink');bindText('oralConclusion',state.oral,'conclusion');const d=document.getElementById('oralDuration');const options=[180,300,600,900];let val=+state.oral.duration||(+state.context.duration||10)*60;if(!options.includes(val))val=600;d.value=String(val);d.onchange=e=>{state.oral.duration=+e.target.value;save()}}
@@ -641,16 +683,30 @@ function newQuiz(){const order=[...Array(quizBank.length).keys()].sort(()=>Math.
 function renderMethodQuiz(){const w=document.getElementById('methodQuiz');if(!state.quiz.order.length){w.innerHTML='<div class="card"><h2>Prêt à vérifier vos réflexes ?</h2><p>8 questions seront tirées au hasard dans une banque de 12.</p><button class="btn primary" id="startQuiz">Commencer le défi</button></div>';document.getElementById('startQuiz').onclick=newQuiz;return}if(state.quiz.done){const pct=Math.round(state.quiz.score/8*100);w.innerHTML=`<div class="card"><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap"><div class="score-ring">${pct}%</div><div><h2>${pct>=75?'Les principes essentiels sont installés':'Quelques réflexes sont encore à consolider'}</h2><p>${pct>=75?'Passez maintenant à la simulation : la compétence finale se vérifie en parlant.':'Relisez vos feedbacks, puis vous pouvez refaire le défi avant la simulation.'}</p></div></div><button class="btn secondary" id="retryQuiz">Refaire le défi</button></div>`;document.getElementById('retryQuiz').onclick=newQuiz;updateNextState();return}const idx=state.quiz.order[state.quiz.index],q=quizBank[idx];w.innerHTML=`<div class="card"><div class="small muted">Question ${state.quiz.index+1} / 8</div><h2>${esc(q.q)}</h2><div class="quiz-options">${q.o.map((o,i)=>`<button class="btn ghost" data-qopt="${i}">${esc(o)}</button>`).join('')}</div><div id="quizFeedback" class="callout tip" style="display:none"></div></div>`;w.querySelectorAll('[data-qopt]').forEach(b=>b.onclick=()=>{w.querySelectorAll('[data-qopt]').forEach(x=>x.disabled=true);const chosen=+b.dataset.qopt,correct=chosen===q.a;if(correct)state.quiz.score++;state.quiz.answers.push({idx,chosen,correct});save();const f=document.getElementById('quizFeedback');f.style.display='block';f.innerHTML=`<strong>${correct?'Bonne réponse.':'À retenir.'}</strong> ${esc(q.f)}<div style="margin-top:12px"><button class="btn primary" id="quizContinue">${state.quiz.index===7?'Voir mon résultat':'Question suivante →'}</button></div>`;document.getElementById('quizContinue').onclick=()=>{state.quiz.index++;if(state.quiz.index>=8)state.quiz.done=true;save();renderMethodQuiz();updateNextState()}})}
 
 // Simulation
-function renderSimPreview(){const p=state.experiences.filter(e=>e.class==='presentation');document.getElementById('simExperiences').innerHTML=p.length?p.map(e=>`<p>• ${esc(e.title)}</p>`).join(''):'<p>Aucune expérience prioritaire sélectionnée.</p>';const arr=[state.identity.summary,state.thread.summary,state.project.wish,state.project.why,state.motivations.attract,state.motivations.contrib].filter(Boolean);document.getElementById('simProject').innerHTML=arr.length?arr.map(x=>`<p>• ${esc(x)}</p>`).join(''):'<p>Votre projet n’est pas encore renseigné.</p>';const dur=document.getElementById('duration');const val=+state.oral.duration||600;dur.value=[180,300,600,900].includes(val)?String(val):'600'}
+function renderSimPreview(){const p=state.experiences.filter(e=>e.class==='presentation');document.getElementById('simExperiences').innerHTML=p.length?p.map(e=>`<p>• ${esc(e.title)}</p>`).join(''):'<p>Aucune expérience prioritaire sélectionnée.</p>';const arr=[state.identity.summary,state.thread.summary,state.project.wish,state.project.why,state.motivations.attract,state.motivations.contrib].filter(Boolean);document.getElementById('simProject').innerHTML=arr.length?arr.map(x=>`<p>• ${esc(x)}</p>`).join(''):'<p>Votre projet n’est pas encore renseigné.</p>';const dur=document.getElementById('duration'),val=+state.oral.duration||600;dur.value=[180,300,600,900].includes(val)?String(val):'600';const strip=document.getElementById('simAttemptStrip'),cue=document.getElementById('simAttemptCue');strip.innerHTML=`<span class="attempt-pill ${state.simAttempts>=1?'done':''}">Essai 1 ${state.simAttempts>=1?'✓':''}</span><span class="attempt-pill ${state.simAttempts>=2?'done':''}">Essai 2 ${state.simAttempts>=2?'✓':''}</span>`;if(state.simAttempts===1){cue.style.display='block';cue.innerHTML=`<strong>Essai 2 :</strong> ne cherchez pas à tout améliorer. Concentrez-vous uniquement sur vos deux priorités : ${state.debrief.length?state.debrief.map(i=>esc(debriefItems[i])).join(' · '):'choisissez-les dans le débriefing du premier essai.'}`}else if(state.simAttempts>=2){cue.style.display='block';cue.innerHTML='<strong>Vous avez réalisé les deux essais.</strong> Vous pouvez encore vous entraîner, ou passer au bilan final.'}else cue.style.display='none'}
 document.getElementById('startSim').onclick=startSim;function startSim(){timerLeft=+document.getElementById('duration').value;state.oral.duration=timerLeft;save();document.body.classList.add('sim-mode');document.getElementById('preSim').style.display='none';document.getElementById('timerSim').style.display='flex';document.getElementById('postSim').style.display='none';updateTimer();timerInt=setInterval(()=>{timerLeft--;updateTimer();if(timerLeft<=0)stopSim(true)},1000)}
 function updateTimer(){const m=Math.floor(timerLeft/60),s=timerLeft%60;document.getElementById('timerText').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');const note=document.getElementById('timerNote'),total=+state.oral.duration||600;let txt='';if(timerLeft<=30&&timerLeft>0)txt='30 secondes — pensez à conclure';else if(total>300&&timerLeft<=120)txt='2 minutes restantes';else if(total<=300&&timerLeft<=60)txt='1 minute restante';note.classList.toggle('show',!!txt);note.textContent=txt}
-function stopSim(){clearInterval(timerInt);timerInt=null;state.simCompleted=true;save();document.body.classList.remove('sim-mode');document.getElementById('timerSim').style.display='none';document.getElementById('postSim').style.display='block';renderDebrief();window.scrollTo({top:0})}
+function stopSim(){clearInterval(timerInt);timerInt=null;state.simAttempts=(state.simAttempts||0)+1;state.simCompleted=state.simAttempts>=2;save();document.body.classList.remove('sim-mode');document.getElementById('timerSim').style.display='none';document.getElementById('postSim').style.display='block';renderDebrief();renderPostSimState();window.scrollTo({top:0})}
+function renderPostSimState(){const restart=document.getElementById('restartSim'),goBilan=document.getElementById('goResources'),refWrap=document.getElementById('simReflectionWrap'),ref=document.getElementById('simReflection');if(state.simAttempts<2){restart.textContent='Faire un deuxième essai →';goBilan.style.display='none';refWrap.style.display='none'}else{restart.textContent='Refaire une simulation';goBilan.style.display='inline-flex';goBilan.textContent='Voir mon bilan →';refWrap.style.display='block';ref.value=state.simReflection||'';ref.oninput=e=>{state.simReflection=e.target.value;save()}}}
 document.getElementById('stopSim').onclick=()=>{if(confirm('Arrêter cette simulation ?'))stopSim()};document.getElementById('restartSim').onclick=()=>{document.getElementById('postSim').style.display='none';document.getElementById('preSim').style.display='block';renderSimPreview()};const goResourcesBtn=document.getElementById('goResources');if(goResourcesBtn)goResourcesBtn.onclick=()=>go(20);
-const debriefItems=['J’ai sélectionné au lieu de tout raconter','Mes exemples étaient précis','Ma contribution personnelle était claire','Mes compétences apparaissaient','Ma progression était compréhensible','Mon fil conducteur était perceptible','Mon identité professionnelle apparaissait','Mon projet était réellement expliqué','Mes motivations étaient compréhensibles','Le lien entre parcours et projet était clair','J’ai respecté le temps','J’ai parlé sans réciter'];function renderDebrief(){const w=document.getElementById('debriefCards');w.innerHTML=debriefItems.map((x,i)=>`<button class="card ${state.debrief.includes(i)?'selected':''}" data-d="${i}" style="text-align:left"><strong>${x}</strong><p class="small muted">Cliquer pour ${state.debrief.includes(i)?'retirer':'ajouter'} ce point à mes priorités.</p></button>`).join('');w.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{const i=+b.dataset.d;if(state.debrief.includes(i))state.debrief=state.debrief.filter(v=>v!==i);else if(state.debrief.length<2)state.debrief.push(i);else alert('Choisissez 2 priorités maximum.');save();renderDebrief()});const sm=document.getElementById('debriefSummary');if(state.debrief.length){sm.style.display='block';sm.innerHTML='<div class="eyebrow">Mes priorités</div>'+state.debrief.map((v,j)=>`<p><strong>${j+1}.</strong> ${esc(debriefItems[v])}</p>`).join('')}else sm.style.display='none'}
+const debriefItems=['J’ai sélectionné au lieu de tout raconter','Mes exemples étaient précis','Ma contribution personnelle était claire','Mes compétences apparaissaient','Ma progression était compréhensible','Mon fil conducteur était perceptible','Mon identité professionnelle apparaissait','Mon projet était réellement expliqué','Mes motivations étaient compréhensibles','Le lien entre parcours et projet était clair','J’ai respecté le temps','J’ai parlé sans réciter'];function renderDebrief(){const w=document.getElementById('debriefCards');w.innerHTML=debriefItems.map((x,i)=>`<button class="card ${state.debrief.includes(i)?'selected':''}" data-d="${i}" style="text-align:left"><strong>${x}</strong><p class="small muted">Cliquer pour ${state.debrief.includes(i)?'retirer':'ajouter'} ce point à mes priorités.</p></button>`).join('');w.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{const i=+b.dataset.d;if(state.debrief.includes(i))state.debrief=state.debrief.filter(v=>v!==i);else if(state.debrief.length<2)state.debrief.push(i);else alert('Choisissez 2 priorités maximum.');save();renderDebrief();renderPostSimState()});const sm=document.getElementById('debriefSummary');if(state.debrief.length){sm.style.display='block';sm.innerHTML='<div class="eyebrow">Mes priorités</div>'+state.debrief.map((v,j)=>`<p><strong>${j+1}.</strong> ${esc(debriefItems[v])}</p>`).join('')}else sm.style.display='none';const restart=document.getElementById('restartSim');if(restart&&state.simAttempts===1){restart.disabled=state.debrief.length!==2;restart.title=restart.disabled?'Choisissez exactement 2 priorités avant le deuxième essai.':''}}
+
+// Micro-entraînements à voix haute
+let microTimer=null;function setupMicroTimers(){document.querySelectorAll('.micro-practice').forEach(box=>{const id=box.dataset.micro,seconds=+box.dataset.seconds||30,btn=box.querySelector('[data-micro-start]'),display=box.querySelector('.micro-time'),done=box.querySelector('[data-micro-done]');let left=seconds;const fmt=n=>String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');display.textContent=fmt(seconds);done.textContent=state.microPractice?.[id]?'Essai réalisé ✓':'';btn.onclick=()=>{if(microTimer)clearInterval(microTimer);left=seconds;display.textContent=fmt(left);btn.disabled=true;done.textContent='Parlez à voix haute…';microTimer=setInterval(()=>{left--;display.textContent=fmt(Math.max(0,left));if(left<=0){clearInterval(microTimer);microTimer=null;btn.disabled=false;btn.textContent='Refaire';state.microPractice=state.microPractice||{};state.microPractice[id]=true;done.textContent='Essai réalisé ✓';save()}},1000)}})}
+
+// Le diagnostic initial devient un fil rouge de personnalisation
+function renderFocusCue(screenIndex){document.querySelectorAll('.personal-focus').forEach(x=>x.remove());if(!state.diagnosticDone)return;const map={7:[0,'sélectionner quelques expériences plutôt que tout raconter'],9:[1,2,'préciser votre contribution et démontrer vos compétences'],11:[3,'faire apparaître le fil conducteur de votre parcours'],13:[4,'relier votre projet à votre parcours et à vos motivations'],14:[4,'expliquer vos motivations'],16:[0,1,2,3,4,'assembler vos idées sans réciter']};const conf=map[screenIndex];if(!conf)return;const label=conf.pop(),indices=conf;if(!indices.some(i=>(state.diagnostic[i]??2)<2))return;const target=screens[screenIndex].querySelector('.activity-instruction')||screens[screenIndex].querySelector('.lead');const div=document.createElement('div');div.className='personal-focus';div.innerHTML=`<strong>Votre point de vigilance :</strong> au démarrage, vous aviez identifié un besoin autour de « ${esc(label)} ». Cette étape est particulièrement utile pour vous.`;target.insertAdjacentElement('afterend',div)}
+
+// Bilan avant / maintenant
+const diagnosticLabels=['Sélectionner les expériences utiles','Expliquer ma contribution personnelle','Démontrer mes compétences par des exemples','Expliquer le fil conducteur de mon parcours','Présenter mon projet et mes motivations'];
+function renderFinalDiagnostic(){const w=document.getElementById('finalDiagnosticList');w.innerHTML=diagnosticItems.map((x,i)=>`<div class="question-item"><strong>${i+1}. ${x}</strong><div class="choice-list"><label class="choice"><input type="radio" name="fdiag${i}" value="2" ${state.finalDiagnostic[i]===2?'checked':''}> Oui, clairement</label><label class="choice"><input type="radio" name="fdiag${i}" value="1" ${state.finalDiagnostic[i]===1?'checked':''}> En partie</label><label class="choice"><input type="radio" name="fdiag${i}" value="0" ${state.finalDiagnostic[i]===0?'checked':''}> Pas encore</label></div></div>`).join('');w.querySelectorAll('input').forEach(r=>r.onchange=()=>{state.finalDiagnostic[+r.name.replace('fdiag','')]=+r.value;save()});if(state.finalDiagnosticDone)showFinalDiagnosticSummary()}
+function levelText(v){return v===2?'Oui, clairement':v===1?'En partie':'Pas encore'}
+document.getElementById('saveFinalDiagnostic').onclick=()=>{if(state.finalDiagnostic.filter(v=>v!==undefined).length<5){alert('Répondez aux 5 affirmations avant d’afficher votre évolution.');return}state.finalDiagnosticDone=true;save();showFinalDiagnosticSummary();updateNextState()};
+function showFinalDiagnosticSummary(){const w=document.getElementById('finalDiagnosticSummary');w.style.display='block';let improved=0;const rows=diagnosticLabels.map((label,i)=>{const start=state.diagnostic[i]??0,now=state.finalDiagnostic[i]??0;if(now>start)improved++;return `<div class="compare-row"><div class="compare-label">${esc(label)}</div><div class="compare-value start">${levelText(start)}</div><div class="compare-value now">${levelText(now)}</div></div>`}).join('');w.innerHTML=`<div class="eyebrow">Votre perception du chemin parcouru</div><div class="compare-grid"><div class="compare-head">Dimension</div><div class="compare-head" style="text-align:center">Au début</div><div class="compare-head" style="text-align:center">Maintenant</div>${rows}</div><div class="callout tip"><strong>${improved?`${improved} dimension(s) perçue(s) en progression.`:'Votre bilan reste stable.'}</strong> Ce résultat n’est pas une note : utilisez-le pour décider de vos prochains entraînements.</div>${state.simReflection?`<p><strong>Après mon deuxième essai :</strong> ${esc(state.simReflection)}</p>`:''}`}
 
 // Notebook
 function hasPersonalContent(){return state.experiences.length||Object.values(state.project).some(Boolean)||Object.values(state.motivations).some(Boolean)||state.thread.summary||state.identity.summary||state.progression.summary||state.expectations.some(x=>Object.values(x).some(Boolean))||Object.values(state.oral).some(v=>typeof v==='string'&&v.trim())}
-function updateNotebook(){const p=state.project;const all=state.experiences;const context=`${ctxLabels[state.context.type]||'—'} · ${sourceLabels[state.context.sourceDocument]||'—'}${state.context.duration?' · '+state.context.duration+' min':''}`;document.getElementById('notebookBody').innerHTML=`<h3>Mon contexte</h3><p>${esc(context)}</p><h3>Mon parcours</h3>${all.length?all.map((x,i)=>`<div class="card personal" style="margin-bottom:10px"><strong>${i+1}. ${esc(x.title)}</strong><div class="small muted">${esc(x.period||'')}</div>${x.action?`<p class="small"><strong>Ce que j’ai fait :</strong> ${esc(x.action)}</p>`:''}${x.value?`<p class="small"><strong>Ce que cela peut montrer :</strong> ${esc(x.value)}</p>`:''}${Object.values(x.lab||{}).some(v=>String(v||'').trim())?`<details><summary class="small"><strong>Voir mon analyse détaillée</strong></summary>${labMeta.map((m,j)=>`<p class="small"><strong>${m[0]} :</strong> ${esc((x.lab||{})[j]||'—')}</p>`).join('')}</details>`:''}</div>`).join(''):'<p class="muted">Vous construirez cette partie plus tard.</p>'}<h3>Ma progression</h3><p><strong>Priorités :</strong> ${esc(state.progression.priority.join(', ')||'—')}</p><p>${esc(state.progression.summary||'—')}</p><h3>Mon fil conducteur</h3><p>${esc(state.thread.summary||'—')}</p><h3>Qui je suis aujourd’hui</h3><p>${esc(state.identity.summary||'—')}</p><h3>Mon projet</h3>${['wish','why','prep','contrib'].map(k=>`<p><strong>${projLabels[k][0]}</strong><br>${esc(p[k]||'—')}</p>`).join('')}<h3>Mes motivations</h3><p><strong>Ce qui m’attire :</strong> ${esc(state.motivations.attract||'—')}</p><p><strong>Ce que je veux davantage exercer :</strong> ${esc(state.motivations.more||'—')}</p><p><strong>Ce que mon parcours m’a appris :</strong> ${esc(state.motivations.learned||'—')}</p><p><strong>Ce que je souhaite apporter :</strong> ${esc(state.motivations.contrib||'—')}</p><h3>Mon adaptation à l’entretien</h3>${state.expectations.filter(x=>x.expected).map(x=>`<p><strong>${esc(x.expected)}</strong><br>${esc(x.proof||'—')}<br><span class="small muted">À préparer : ${esc(x.prepare||'—')}</span></p>`).join('')||'<p>—</p>'}<h3>Mon oral</h3><p><strong>Introduction :</strong> ${esc(state.oral.intro||'—')}</p><p><strong>Structure :</strong> ${esc(state.oral.structure||'—')}</p><p><strong>Lien parcours-projet :</strong> ${esc(state.oral.projectLink||'—')}</p><p><strong>Conclusion :</strong> ${esc(state.oral.conclusion||'—')}</p><h3>Mes questions à préparer</h3>${state.questions.filter(q=>q.question).map(q=>`<p><strong>${esc(q.expTitle)} :</strong> ${esc(q.question)}<br><span class="small muted">Faits utiles : ${esc(q.facts||'—')}</span></p>`).join('')||'<p>—</p>'}<h3>Mes priorités d’entraînement</h3>${state.debrief.length?state.debrief.map((v,i)=>`<p>${i+1}. ${esc(debriefItems[v])}</p>`).join(''):'<p class="muted">Aucune priorité définie pour le moment.</p>'}`;const btn=document.getElementById('downloadPdf');if(btn){btn.disabled=!hasPersonalContent();btn.title=btn.disabled?'Saisissez d’abord un élément personnel.':''}const note=document.getElementById('pdfExportNote');if(note)note.textContent=hasPersonalContent()?'Le document reprendra tout ce que vous avez écrit jusqu’à présent.':'Le bouton s’activera dès que vous aurez saisi un élément personnel.'}
+function updateNotebook(){const p=state.project;const all=state.experiences;const context=`${ctxLabels[state.context.type]||'—'} · ${sourceLabels[state.context.sourceDocument]||'—'}${state.context.duration?' · '+state.context.duration+' min':''}`;document.getElementById('notebookBody').innerHTML=`<h3>Mon contexte</h3><p>${esc(context)}</p><h3>Mon parcours</h3>${all.length?all.map((x,i)=>`<div class="card personal" style="margin-bottom:10px"><strong>${i+1}. ${esc(x.title)}</strong><div class="small muted">${esc(x.period||'')}</div>${x.action?`<p class="small"><strong>Ce que j’ai fait :</strong> ${esc(x.action)}</p>`:''}${x.value?`<p class="small"><strong>Ce que cela peut montrer :</strong> ${esc(x.value)}</p>`:''}${Object.values(x.lab||{}).some(v=>String(v||'').trim())?`<details><summary class="small"><strong>Voir mon analyse détaillée</strong></summary>${labMeta.map((m,j)=>`<p class="small"><strong>${m[0]} :</strong> ${esc((x.lab||{})[j]||'—')}</p>`).join('')}</details>`:''}</div>`).join(''):'<p class="muted">Vous construirez cette partie plus tard.</p>'}<h3>Ma progression</h3><p><strong>Priorités :</strong> ${esc(state.progression.priority.join(', ')||'—')}</p><p>${esc(state.progression.summary||'—')}</p><h3>Mon fil conducteur</h3><p>${esc(state.thread.summary||'—')}</p><h3>Qui je suis aujourd’hui</h3><p>${esc(state.identity.summary||'—')}</p><h3>Mon projet</h3>${['wish','why','prep','contrib'].map(k=>`<p><strong>${projLabels[k][0]}</strong><br>${esc(p[k]||'—')}</p>`).join('')}<h3>Mes motivations</h3><p><strong>Ce qui m’attire :</strong> ${esc(state.motivations.attract||'—')}</p><p><strong>Ce que je veux davantage exercer :</strong> ${esc(state.motivations.more||'—')}</p><p><strong>Ce que mon parcours m’a appris :</strong> ${esc(state.motivations.learned||'—')}</p><p><strong>Ce que je souhaite apporter :</strong> ${esc(state.motivations.contrib||'—')}</p><h3>Mon adaptation à l’entretien</h3>${state.expectations.filter(x=>x.expected).map(x=>`<p><strong>${esc(x.expected)}</strong><br>${esc(x.proof||'—')}<br><span class="small muted">À préparer : ${esc(x.prepare||'—')}</span></p>`).join('')||'<p>—</p>'}<h3>Mon oral</h3><p><strong>Introduction :</strong> ${esc(state.oral.intro||'—')}</p><p><strong>Structure :</strong> ${esc(state.oral.structure||'—')}</p><p><strong>Lien parcours-projet :</strong> ${esc(state.oral.projectLink||'—')}</p><p><strong>Conclusion :</strong> ${esc(state.oral.conclusion||'—')}</p><h3>Mes questions à préparer</h3>${state.questions.filter(q=>q.question).map(q=>`<p><strong>${esc(q.expTitle)} :</strong> ${esc(q.question)}<br><span class="small muted">Faits utiles : ${esc(q.facts||'—')}</span></p>`).join('')||'<p>—</p>'}<h3>Mes priorités d’entraînement</h3>${state.debrief.length?state.debrief.map((v,i)=>`<p>${i+1}. ${esc(debriefItems[v])}</p>`).join(''):'<p class="muted">Aucune priorité définie pour le moment.</p>'}<h3>Mes simulations</h3><p>${state.simAttempts||0} essai(s) réalisé(s).</p>${state.simReflection?`<p><strong>Ce qui s’est amélioré :</strong> ${esc(state.simReflection)}</p>`:''}`;const btn=document.getElementById('downloadPdf');if(btn){btn.disabled=!hasPersonalContent();btn.title=btn.disabled?'Saisissez d’abord un élément personnel.':''}const note=document.getElementById('pdfExportNote');if(note)note.textContent=hasPersonalContent()?'Le document reprendra tout ce que vous avez écrit jusqu’à présent.':'Le bouton s’activera dès que vous aurez saisi un élément personnel.'}
 
 // PDF generator
 function pdfSafeText(s=''){return String(s??'').replace(/\r/g,'').replace(/[\u2028\u2029]/g,' ')}
@@ -669,7 +725,7 @@ h1('6. Mes motivations');labelValue('Ce qui m’attire',state.motivations.attrac
 h1('7. Adapter mon argumentaire');state.expectations.filter(x=>x.expected).forEach((x,i)=>{h2(`Attente ${i+1}`);labelValue('Ce qui est attendu',x.expected);labelValue('Ce que je peux déjà prouver',x.proof);labelValue('Exemple ou point à préparer',x.prepare)});
 h1('8. Ma trame orale');labelValue('Introduction',state.oral.intro);labelValue('Mes étapes principales',state.oral.structure);labelValue('Lien parcours - projet',state.oral.projectLink);labelValue('Conclusion',state.oral.conclusion);
 h1('9. Mes questions à préparer');state.questions.filter(x=>x.question).forEach((x,i)=>{h2(x.expTitle||`Expérience ${i+1}`);labelValue('Question difficile',x.question);labelValue('Faits utiles pour répondre',x.facts)});
-h1('10. Mes priorités d’entraînement');state.debrief.forEach((idx,i)=>para(`${i+1}. ${debriefItems[idx]}`,{indent:8,spaceAfter:6}));if(!state.debrief.length)para('Aucune priorité définie pour le moment.',{color:muted});h1('11. Repère pour la suite');para('Utilisez ce dossier pour retrouver vos faits, vos exemples et la logique de votre projet. Ne l’apprenez pas mot à mot.',{spaceAfter:8});para('Question repère : « Qu’ai-je réellement fait qui permet de le démontrer ? »',{font:'F2',color:green});footer();pages.push(cmds.join('\n'));
+h1('10. Mes priorités d’entraînement');state.debrief.forEach((idx,i)=>para(`${i+1}. ${debriefItems[idx]}`,{indent:8,spaceAfter:6}));if(!state.debrief.length)para('Aucune priorité définie pour le moment.',{color:muted});labelValue('Après mon deuxième essai',state.simReflection);h1('11. Mon bilan perçu');if(state.finalDiagnosticDone)diagnosticLabels.forEach((l,i)=>labelValue(l,`${levelText(state.diagnostic[i]??0)} → ${levelText(state.finalDiagnostic[i]??0)}`));else para('Bilan final non encore complété.',{color:muted});h1('12. Repère pour la suite');para('Utilisez ce dossier pour retrouver vos faits, vos exemples et la logique de votre projet. Ne l’apprenez pas mot à mot.',{spaceAfter:8});para('Question repère : « Qu’ai-je réellement fait qui permet de le démontrer ? »',{font:'F2',color:green});footer();pages.push(cmds.join('\n'));
 const objects=[];const obj=s=>{objects.push(s);return objects.length},font1=obj('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>'),font2=obj('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>'),pageObjs=[],contentObjs=pages.map(content=>obj(`<< /Length ${toWinAnsi(content).length} >>\nstream\n${content}\nendstream`)),pagesRootId=objects.length+pages.length+1;pages.forEach((content,idx)=>pageObjs.push(obj(`<< /Type /Page /Parent ${pagesRootId} 0 R /MediaBox [0 0 ${W} ${H}] /Resources << /Font << /F1 ${font1} 0 R /F2 ${font2} 0 R >> >> /Contents ${contentObjs[idx]} 0 R >>`)));const pagesRoot=obj(`<< /Type /Pages /Count ${pageObjs.length} /Kids [${pageObjs.map(id=>id+' 0 R').join(' ')}] >>`),catalog=obj(`<< /Type /Catalog /Pages ${pagesRoot} 0 R >>`),info=obj(`<< /Title (${pdfEscapedString('Mon dossier personnel de préparation')}) /Creator (${pdfEscapedString('Module de préparation')}) >>`),chunks=['%PDF-1.4\n%âãÏÓ\n'],offsets=[0];let pos=toWinAnsi(chunks[0]).length;objects.forEach((o,i)=>{offsets[i+1]=pos;const chunk=`${i+1} 0 obj\n${o}\nendobj\n`;chunks.push(chunk);pos+=toWinAnsi(chunk).length});const xref=pos;let x=`xref\n0 ${objects.length+1}\n0000000000 65535 f \n`;for(let i=1;i<=objects.length;i++)x+=String(offsets[i]).padStart(10,'0')+' 00000 n \n';x+=`trailer\n<< /Size ${objects.length+1} /Root ${catalog} 0 R /Info ${info} 0 R >>\nstartxref\n${xref}\n%%EOF`;chunks.push(x);const allBytes=[];chunks.forEach(c=>allBytes.push(...toWinAnsi(c)));return new Blob([new Uint8Array(allBytes)],{type:'application/pdf'})}
 function downloadPersonalPdf(){if(!hasPersonalContent()){alert('Votre dossier est encore vide. Saisissez d’abord un élément personnel.');return}try{const blob=createPersonalPdf(),url=URL.createObjectURL(blob),a=document.createElement('a'),d=new Date(),date=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;a.href=url;a.download=`mon-dossier-preparation-entretien-${date}.pdf`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}catch(err){console.error(err);alert('Le PDF n’a pas pu être généré dans ce navigateur.')}}
 const dlPdf=document.getElementById('downloadPdf');if(dlPdf)dlPdf.onclick=downloadPersonalPdf;const dlPdfFinal=document.getElementById('downloadPdfFinal');if(dlPdfFinal)dlPdfFinal.onclick=downloadPersonalPdf;const dlPdfResources=document.getElementById('downloadPdfResources');if(dlPdfResources)dlPdfResources.onclick=downloadPersonalPdf;
@@ -679,7 +735,7 @@ document.getElementById('openNotebook').onclick=()=>document.getElementById('not
 // fullscreen
 const fs=document.getElementById('fullscreenBtn');let internalFullscreen=false;function setInternalFullscreen(on){internalFullscreen=on;document.body.classList.toggle('focus-mode',on);fs.innerHTML=on?'⛶ <span>Quitter le plein écran</span>':'⛶ <span>Plein écran</span>';fs.setAttribute('aria-pressed',on?'true':'false');window.scrollTo({top:0,behavior:'smooth'})}async function toggleFullscreen(){if(internalFullscreen){setInternalFullscreen(false);return}const embedded=window.self!==window.top;if(embedded||!document.documentElement.requestFullscreen){setInternalFullscreen(true);return}try{await document.documentElement.requestFullscreen()}catch(err){setInternalFullscreen(true)}}fs.onclick=toggleFullscreen;document.addEventListener('fullscreenchange',()=>{if(document.fullscreenElement){fs.innerHTML='⛶ <span>Quitter le plein écran</span>';fs.setAttribute('aria-pressed','true')}else if(!internalFullscreen){fs.innerHTML='⛶ <span>Plein écran</span>';fs.setAttribute('aria-pressed','false')}});
 function esc(x=''){return String(x).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-updateProjectButtons();renderNav();updateProgress();updateNotebook();go(state.screen||0);
+updateProjectButtons();setupMicroTimers();renderNav();updateProgress();updateNotebook();go(state.screen||0);
 </script>
 </body>
 </html>
